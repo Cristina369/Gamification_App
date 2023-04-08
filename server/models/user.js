@@ -12,7 +12,11 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
   birthDate: { type: String, required: true },
   points: { type: String, default: "0" },
-  badges: { type: ObjectId, ref: "badge" },
+  badges: {
+    type: [ObjectId],
+    ref: "badge",
+    default: "6431389354823da0f51247c2",
+  },
   quests: { type: [String], default: [] }, //quests accepted or completed
   aprecietedQuest: { type: [String], default: [] },
   proposedQuests: { type: [String], default: [] },

@@ -1,3 +1,79 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.links-l {
+  @apply bg-white text-black font-light desktop:text-2xl tablet:text-xl px-4 py-2 -mb-2 rounded mobile:ml-4 hover:bg-gray-100 duration-500 border border-gray-100 flex justify-end items-center;
+}
+
+.nav-link {
+  @apply tablet:font-thin mobile:font-extralight mobile:text-3xl mobile:pt-4 tablet:text-xl desktop:text-2xl;
+}
+
+.links-user {
+  @apply block px-4 py-2 font-normal mobile:font-extralight mobile:text-2xl mobile:pt-4 tablet:text-xl;
+}
+
+@layer base {
+  html {
+    font-family: "EB Garamond", serif;
+    background-color: white;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .display {
+    display: inline !important;
+  }
+
+  section.homeBlogs > div:nth-child(odd) div.text {
+    align-items: flex-start;
+    padding-left: 1rem;
+  }
+
+  section.homeBlogs > div:nth-child(even) div.text {
+    align-items: flex-end;
+    padding-right: 1rem;
+  }
+
+  div.about-background {
+    /* background-image: url("./images/image_7.jpg"); */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    opacity: 0.9;
+  }
+
+  div.homepage {
+    /* background-image: url("./images/thomas-charters-zAi2Is48-MA-unsplash.jpg"); */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+
+  .titleAbout {
+    writing-mode: vertical-lr;
+    text-orientation: sideways;
+    transform: rotate(0deg);
+  }
+
+  .profil-form input {
+    height: 50px;
+  }
+
+  .titleAllBlogs {
+    width: -webkit-fill-available;
+  }
+
+  @media (min-width: 750px) {
+    section.homeBlogs > div:nth-child(odd) > div.flexBlogs {
+      flex-direction: row;
+    }
+
+    section.homeBlogs > div:nth-child(even) > div.flexBlogs {
+      flex-direction: row-reverse;
+    }
+  }
+}

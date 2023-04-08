@@ -15,7 +15,6 @@ const SignUp = () => {
   });
 
   const [errors] = useState({});
-  const [setIsFetching] = useState(false);
 
   const history = useNavigate();
 
@@ -31,17 +30,15 @@ const SignUp = () => {
   };
 
   const handleSubmit = async (e) => {
+    console.log("path -> " + process.env.REACT_APP_API_URL);
     e.preventDefault();
     if (Object.keys(errors).length === 0) {
       try {
-        setIsFetching(true);
-        const url = process.env.REACT_APP_API_URL + "/utilizatori";
+        const url = process.env.REACT_APP_API_URL + "/users";
         await axios.post(url, data);
-        setIsFetching(false);
         alert("Cont creat cu succes");
         history.push("/login");
       } catch (error) {
-        setIsFetching(false);
         if (
           error.response &&
           error.response.status >= 400 &&

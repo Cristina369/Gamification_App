@@ -16,7 +16,7 @@ import Header from "./components/common/heading/Header";
 // import EditBlog from "./components/blog/EditBlog";
 // import Footer from "./components/common/footer/Footer";
 // import Contact from "./components/contact/Contact";
-// import UserBlog from "./components/allblogs/UserBlog";
+import UserContainer from "./components/user/UserContainer";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -48,6 +48,7 @@ const App = () => {
         location.pathname !== "/login" && <Fragment></Fragment>}
       <Routes>
         <Route path="/" exact element={<Home />} />
+        <Route exact path="/users/:id" element={<UserContainer />} />
         {/* <Route exact path="/about" element={<About />} />
         <Route exact path="/all-blogs" element={<AllBlogs />} />
         <Route exact path="/blogs" element={<Blogs />} />
