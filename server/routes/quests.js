@@ -12,10 +12,20 @@ router.post("/", auth, async (req, res) => {
   if (error) res.status(400).send({ message: error.details[0].message });
 
   const user = await User.findById(req.user._id);
-  const quest = await Quest({ ...req.body, user: user._id }).save();
-  user.proposedQuests.push(quest._id);
-  await user.save();
+  const quest = await Quest({ ...req.body, user: user._id });
+  const points = user.points;
 
+  if (user.points > 500) {
+    user.proposedQuests.push(quest._id);
+    resMessage = "Quest was created" + user.points;
+    await quest.save();
+    await user.save();
+  }
+  if (user.points < 500) {
+    resMessage = "Error! You don't have enough points to create a quest";
+  } else {
+    resMessage = "Error!";
+  }
   res.status(201).send({ data: quest });
 });
 

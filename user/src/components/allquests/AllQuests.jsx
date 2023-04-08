@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import axiosI from "../../redux/axios";
 import QuestContainer from "./QuestContainer";
@@ -6,6 +7,10 @@ import { Link } from "react-router-dom";
 
 const AllQuests = () => {
   const [quests, setQuests] = useState([]);
+  const { user } = useSelector((state) => state.user);
+  const [data, setData] = useState({
+    points: "",
+  });
 
   const getAllQuests = async () => {
     try {
@@ -17,6 +22,14 @@ const AllQuests = () => {
       console.log(error);
     }
   };
+  useEffect(() => {
+    if (user) {
+      const dk = {
+        points: user.points,
+      };
+      setData(dk);
+    }
+  }, [user]);
 
   useEffect(() => {
     getAllQuests();
@@ -25,9 +38,15 @@ const AllQuests = () => {
   return (
     <section className="w-10/12 h-full absolute block right-0 top-14 bg-white p-20">
       <div>
-        <Link to="/create-quest">
-          <h1>Create a quest</h1>
-        </Link>
+        {data.points > 500 ? (
+          <Link to="/create-quest">
+            <h1>Create a quest</h1>
+          </Link>
+        ) : (
+          <div>
+            <h1>A</h1>
+          </div>
+        )}
       </div>
       <QuestContainer quests={quests} />
     </section>
