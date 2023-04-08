@@ -3,6 +3,8 @@ const jwt = require("jsonwebtoken");
 const Joi = require("joi");
 const passwordComplexity = require("joi-password-complexity");
 
+const ObjectId = mongoose.Schema.Types.ObjectId;
+
 const userSchema = new mongoose.Schema({
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
@@ -10,7 +12,7 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
   birthDate: { type: String, required: true },
   points: { type: String, default: "0" },
-  badge: { type: [String], default: "Start from scratch" },
+  badges: { type: ObjectId, ref: "badge" },
   quests: { type: [String], default: [] }, //quests accepted or completed
   aprecietedQuest: { type: [String], default: [] },
   proposedQuests: { type: [String], default: [] },
