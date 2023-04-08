@@ -63,7 +63,7 @@ const Header = () => {
             </li>
             <li className="nav-link links-user" tabIndex="-1" id="menu-item-0">
               <Link
-                to="/blogs"
+                to="/my-quests"
                 onClick={() => {
                   setOpen(!open);
                   setActive(!active);
@@ -74,7 +74,7 @@ const Header = () => {
             </li>
             <li className="nav-link links-user" tabIndex="-1" id="menu-item-0">
               <Link
-                to="/blogs"
+                to="/finished-quests"
                 onClick={() => {
                   setOpen(!open);
                   setActive(!active);
@@ -85,7 +85,7 @@ const Header = () => {
             </li>
             <li className="nav-link links-user">
               <Link
-                to="/add-blog"
+                to="/proposed-quest"
                 onClick={() => {
                   setOpen(!open);
                   setActive(!active);
@@ -96,7 +96,7 @@ const Header = () => {
             </li>
             <li className="nav-link links-user">
               <Link
-                to="/add-blog"
+                to="/leaderboard"
                 onClick={() => {
                   setOpen(!open);
                   setActive(!active);
@@ -107,7 +107,7 @@ const Header = () => {
             </li>
             <li className="nav-link links-user" tabIndex="-1" id="menu-item-0">
               <Link
-                to="/blogs"
+                to="/instructions"
                 onClick={() => {
                   setOpen(!open);
                   setActive(!active);

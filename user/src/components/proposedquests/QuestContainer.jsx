@@ -11,9 +11,6 @@ const QuestContainer = ({ quests }) => {
             <h1>Desc: {quest.description}</h1>
             <h1>Points: {quest.points}</h1>
             <h1>Author: {quest.user}</h1>
-            <div>
-              <button className="bg-green-300">Accept quests</button>
-            </div>
           </div>
         ))}
       </div>

@@ -70,6 +70,22 @@ router.get("/specific", auth, async (req, res) => {
   res.status(200).send({ data: quests });
 });
 
+// get user's proposed quests
+router.get("/proposed-quests", auth, async (req, res) => {
+  const user = await User.findById(req.user._id);
+  const quests = await Quest.find({ _id: user.quests, state: "completed" });
+  if (!quests) return res.status(404).send("Can't find quests");
+  res.status(200).send({ data: quests });
+});
+
+// get user's finished quests
+router.get("/finished", auth, async (req, res) => {
+  const user = await User.findById(req.user._id);
+  const quests = await Quest.find({ _id: user.proposedQuests });
+  if (!quests) return res.status(404).send("Can't find quests");
+  res.status(200).send({ data: quests });
+});
+
 router.get("/specific/:id", auth, async (req, res) => {
   const quest = await Quest.findById(req.params.id);
   if (!quest) return res.status(404).send("Can't find quests");

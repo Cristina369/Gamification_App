@@ -8,7 +8,7 @@ import Home from "./components/home/Home";
 import Login from "./components/login/Login";
 import SignUp from "./components/signup/SignUp";
 import Header from "./components/common/heading/Header";
-// import About from "./components/about/About";
+import CreateQuest from "./components/allquests/CreateQuest";
 import AllQuests from "./components/allquests/AllQuests";
 // import Blogs from "./components/blog/Blogs";
 // import Profile from "./components/user/Profile";
@@ -21,6 +21,11 @@ import Head from "./components/common/heading/Head";
 import Panel from "./components/panel/Panel";
 import Profile from "./components/profile/Profile";
 import EditProfile from "./components/profile/EditProfile";
+import Instructions from "./components/instructions/Instructions";
+import Leaderboard from "./components/leaderboard/Leaderboard";
+import MyQuests from "./components/myquests/MyQuests";
+import ProposedQuests from "./components/proposedquests/ProposedQuests";
+import FinishedQuests from "./components/finisedquests/FinishedQuests";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -55,6 +60,13 @@ const App = () => {
             <Route exact path="/profile" element={<Profile />} />
             <Route exact path="/edit-profile" element={<EditProfile />} />
             <Route exact path="/all-quests" element={<AllQuests />} />
+            <Route exact path="/instructions" element={<Instructions />} />
+            <Route exact path="/leaderboard" element={<Leaderboard />} />
+            <Route exact path="/my-quests" element={<MyQuests />} />
+            <Route exact path="/create-quest" element={<CreateQuest />} />
+            <Route exact path="/proposed-quest" element={<ProposedQuests />} />
+            <Route exact path="/finished-quests" element={<FinishedQuests />} />
+
             {/*<Route exact path="/all-blogs" element={<AllBlogs />} />
         <Route exact path="/blogs" element={<Blogs />} />
         <Route exact path="/profile" element={<Profile />} />

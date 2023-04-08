@@ -12,7 +12,7 @@ const QuestContainer = ({ quests }) => {
             <h1>Points: {quest.points}</h1>
             <h1>Author: {quest.user}</h1>
             <div>
-              <button className="bg-green-300">Accept quests</button>
+              <button className="bg-green-300">Complete the quests</button>
             </div>
           </div>
         ))}

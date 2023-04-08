@@ -46,7 +46,7 @@ const UserContainer = () => {
 
   //   console.log("Blogurile sunt" + blogs.title);
   return (
-    <section className="mobile:mt-16 mobile:pt-4 tablet:mt-32 tablet:pt-8 px-5 flex justify-center items-center">
+    <section className="w-10/12 h-full absolute block right-0 top-14 bg-white p-20">
       <div>
         <div>
           <div>
