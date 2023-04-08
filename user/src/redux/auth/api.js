@@ -13,7 +13,7 @@ export const auth = async (payload, dispatch) => {
     const decodeData = jwt_decode(data.data);
     dispatch(authSuccess({ ...decodeData, token: data.data }));
     // alert(data.message);
-    window.location = "/";
+    window.location = "/panel";
     return true;
   } catch (error) {
     dispatch(authFailure());

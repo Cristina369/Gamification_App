@@ -17,6 +17,8 @@ import Header from "./components/common/heading/Header";
 // import Footer from "./components/common/footer/Footer";
 // import Contact from "./components/contact/Contact";
 import UserContainer from "./components/user/UserContainer";
+import Head from "./components/common/heading/Head";
+import Panel from "./components/panel/Panel";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -41,26 +43,34 @@ const App = () => {
 
   return (
     <Fragment>
-      <Header />
-      {user &&
-        location.pathname !== "/signup" &&
-        location.pathname !== "/" &&
-        location.pathname !== "/login" && <Fragment></Fragment>}
-      <Routes>
-        <Route path="/" exact element={<Home />} />
-        <Route exact path="/users/:id" element={<UserContainer />} />
-        {/* <Route exact path="/about" element={<About />} />
-        <Route exact path="/all-blogs" element={<AllBlogs />} />
+      {user && (
+        <Fragment>
+          <Header />
+          <Routes>
+            <Route path="/" exact element={<Home />} />
+            <Route exact path="/users/:id" element={<UserContainer />} />
+            <Route exact path="/panel" element={<Panel />} />
+            {/*<Route exact path="/all-blogs" element={<AllBlogs />} />
         <Route exact path="/blogs" element={<Blogs />} />
         <Route exact path="/profile" element={<Profile />} />
         <Route exact path="/add-blog" element={<AddBlog />} />
         <Route exact path="/contact" element={<Contact />} />
         <Route exact path="/blog/:id" element={<UserBlog />} />
         <Route exact path="/edit-blog/:id" element={<EditBlog />} /> */}
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-      {/* <Footer /> */}
+            {/* <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} /> */}
+          </Routes>
+        </Fragment>
+      )}
+      {!user && (
+        <Fragment>
+          <Head />
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
+          </Routes>
+        </Fragment>
+      )}
     </Fragment>
   );
 };
