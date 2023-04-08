@@ -52,7 +52,7 @@ const Header = () => {
             </li>
             <li className="nav-link links-user" tabIndex="-1" id="menu-item-0">
               <Link
-                to="/blogs"
+                to="/all-quests"
                 onClick={() => {
                   setOpen(!open);
                   setActive(!active);
@@ -72,6 +72,17 @@ const Header = () => {
                 My Quests
               </Link>
             </li>
+            <li className="nav-link links-user" tabIndex="-1" id="menu-item-0">
+              <Link
+                to="/blogs"
+                onClick={() => {
+                  setOpen(!open);
+                  setActive(!active);
+                }}
+              >
+                Finished Quests
+              </Link>
+            </li>
             <li className="nav-link links-user">
               <Link
                 to="/add-blog"
@@ -81,6 +92,28 @@ const Header = () => {
                 }}
               >
                 Proposed Quests
+              </Link>
+            </li>
+            <li className="nav-link links-user">
+              <Link
+                to="/add-blog"
+                onClick={() => {
+                  setOpen(!open);
+                  setActive(!active);
+                }}
+              >
+                Leaderboard
+              </Link>
+            </li>
+            <li className="nav-link links-user" tabIndex="-1" id="menu-item-0">
+              <Link
+                to="/blogs"
+                onClick={() => {
+                  setOpen(!open);
+                  setActive(!active);
+                }}
+              >
+                Instructions
               </Link>
             </li>
             <li className="nav-link links-user">

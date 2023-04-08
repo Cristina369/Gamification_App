@@ -50,6 +50,12 @@ router.put("/accept/:id", [valid, auth], async (req, res) => {
   res.status(200).send({ data: quest, message: resMessage });
 });
 
+// get proposed quests
+router.get("/proposed", async (req, res) => {
+  const quest = await Quest.find({ state: "proposed" });
+  res.status(200).send({ data: quest });
+});
+
 // get all quests
 router.get("/", async (req, res) => {
   const quest = await Quest.find();

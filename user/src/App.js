@@ -9,7 +9,7 @@ import Login from "./components/login/Login";
 import SignUp from "./components/signup/SignUp";
 import Header from "./components/common/heading/Header";
 // import About from "./components/about/About";
-// import AllBlogs from "./components/allblogs/AllBlogs";
+import AllQuests from "./components/allquests/AllQuests";
 // import Blogs from "./components/blog/Blogs";
 // import Profile from "./components/user/Profile";
 // import AddBlog from "./components/blog/AddBlog";
@@ -19,6 +19,8 @@ import Header from "./components/common/heading/Header";
 import UserContainer from "./components/user/UserContainer";
 import Head from "./components/common/heading/Head";
 import Panel from "./components/panel/Panel";
+import Profile from "./components/profile/Profile";
+import EditProfile from "./components/profile/EditProfile";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -50,6 +52,9 @@ const App = () => {
             <Route path="/" exact element={<Home />} />
             <Route exact path="/users/:id" element={<UserContainer />} />
             <Route exact path="/panel" element={<Panel />} />
+            <Route exact path="/profile" element={<Profile />} />
+            <Route exact path="/edit-profile" element={<EditProfile />} />
+            <Route exact path="/all-quests" element={<AllQuests />} />
             {/*<Route exact path="/all-blogs" element={<AllBlogs />} />
         <Route exact path="/blogs" element={<Blogs />} />
         <Route exact path="/profile" element={<Profile />} />

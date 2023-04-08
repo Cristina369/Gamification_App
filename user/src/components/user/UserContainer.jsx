@@ -1,9 +1,9 @@
 import React from "react";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axiosI from "../../redux/axios";
-import Badge from "../user/Badge";
+// import Badge from "../user/Badge";
 
 const UserContainer = () => {
   const [data, setData] = useState([]);
