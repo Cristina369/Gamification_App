@@ -31,7 +31,7 @@ const Home = () => {
   //   window.location = "/login";
   // };
   return (
-    <section className="mobile:mt-16 mobile:pt-4 tablet:mt-32 tablet:pt-16 z-0 flex justify-center items-center">
+    <section className="w-10/12 h-full absolute block right-0 top-14 bg-white p-20">
       <div>
         <h1>Home Page</h1>
       </div>

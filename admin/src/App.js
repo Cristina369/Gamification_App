@@ -7,6 +7,8 @@ import { getUser } from "./redux/user/api";
 import Home from "./components/home/Home";
 import Login from "./components/login/Login";
 import Header from "./components/common/heading/Header";
+import Users from "./components/users/Users";
+import Leaderboard from "./components/leaderboard/Leaderboard";
 // import AllBlog from "./components/allblogs/AllBlogs";
 // import Users from "./components/users/Users";
 // import MyBlogs from "./components/blog/MyBlogs";
@@ -42,6 +44,9 @@ const App = () => {
           <Header />
           <Routes>
             <Route path="/" exact element={<Home />} />
+            <Route exact path="/users" element={<Users />} />
+            <Route exact path="/leaderboard" element={<Leaderboard />} />
+
             {/* <Route exact path="/my-blogs" element={<MyBlogs />} />
             <Route exact path="/blogs" element={<AllBlog />} />
             <Route exact path="/users" element={<Users />} />

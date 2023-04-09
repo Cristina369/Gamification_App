@@ -35,31 +35,12 @@ const Header = () => {
 
   return (
     <>
-      <section className="shadow-md w-full fixed top-0 left-0 z-[100]">
-        <div className="tablet:flex items-center justify-around  bg-white py-8 tablet:pl-20 tablet:pr-0  px-7 desktop:px-40">
-          <div className="absolute desktop:top-10 desktop:left-16 tablet:top-11 tablet:left-4 mobile:top-4">
-            <Link
-              to="/"
-              onClick={() => setOpen(!open)}
-              className="desktop:text-4xl desktop:font-normal tablet:text-3xl mobile:text-3xl "
-            >
-              THE Retrospective
-            </Link>
-          </div>
-          <div
-            onClick={() => setOpen(!open)}
-            className="text-3xl absolute right-8 top-6 cursor-pointer tablet:hidden"
-          >
-            <HiOutlineMenuAlt1 name={open ? "close" : "menu"} />
-          </div>
-          <ul
-            className={`tablet:flex tablet:gap-7 items-center tablet:pb-0  mobile:h-[100vh] tablet:h-auto table:pt-20 mobile:pt-32 absolute tablet:static bg-white tablet:z-auto z-[-1] left-0 w-full tablet:w-auto tablet:pl-0 transition-all duration-500 ease-in tablet:py-0  mobile:text-center tablet:text-left mobile:px-0 ${
-              open ? "top-14" : "top-[-630px]"
-            }`}
-          >
+      <section className="bg-white w-2/12 flex flex-col h-full fixed pl-6 justify-center border-r border-black">
+        <div>
+          <ul>
             <li className="nav-link">
               <Link to="/" onClick={() => setOpen(!open)}>
-                Home
+                Panel
               </Link>
             </li>
             <li className="nav-link">
@@ -68,18 +49,28 @@ const Header = () => {
               </Link>
             </li>
             <li className="nav-link">
+              <Link to="/leaderboard" onClick={() => setOpen(!open)}>
+                Leaderboard
+              </Link>
+            </li>
+            <li className="nav-link">
               <Link to="/blogs" onClick={() => setOpen(!open)}>
-                Blogs
+                All Quests
               </Link>
             </li>
             <li className="nav-link">
               <Link to="/my-blogs" onClick={() => setOpen(!open)}>
-                My Blogs
+                Finished Quests
               </Link>
             </li>
             <li className="nav-link">
               <Link to="/add-blog" onClick={() => setOpen(!open)}>
-                Add New
+                Proposed Quests
+              </Link>
+            </li>
+            <li className="nav-link">
+              <Link to="/add-blog" onClick={() => setOpen(!open)}>
+                Badges
               </Link>
             </li>
             <li

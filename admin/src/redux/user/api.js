@@ -6,7 +6,7 @@ const apiUrl = "http://localhost:8080/api";
 export const getUser = async (payload, dispatch) => {
   dispatch(actions.getUserStart());
   try {
-    const { data } = await axiosI.get(apiUrl + `/utilizatori/${payload}`);
+    const { data } = await axiosI.get(apiUrl + `/users/${payload}`);
     dispatch(actions.getUserSuccess(data.data));
     return true;
   } catch (error) {
@@ -18,7 +18,7 @@ export const getUser = async (payload, dispatch) => {
 export const updateUser = async (payload, dispatch) => {
   dispatch(actions.updateUserStart());
   try {
-    const url = apiUrl + `/utilizatori/${payload.id}`;
+    const url = apiUrl + `/users/${payload.id}`;
     const { data } = await axiosI.put(url, payload.data);
     dispatch(actions.updateUserSuccess(data.data));
     alert(data.message);
@@ -45,7 +45,7 @@ export const apBlogs = async (payload, dispatch) => {
 export const getAllUsers = async (dispatch) => {
   dispatch(actions.getAllUsersStart());
   try {
-    const { data } = await axiosI.get("/utilizatori");
+    const { data } = await axiosI.get("/users");
     dispatch(actions.getAllUsersSuccess(data.data));
     return true;
   } catch (error) {
