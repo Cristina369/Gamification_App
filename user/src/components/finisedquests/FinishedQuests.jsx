@@ -8,7 +8,7 @@ const FinishedQuests = () => {
 
   const getAllQuests = async () => {
     try {
-      const url = process.env.REACT_APP_API_URL + "/quests/finished/";
+      const url = process.env.REACT_APP_API_URL + "/quests/finished";
       const { data } = await axiosI.get(url);
       const array1 = data.data.splice(0, 20);
       setQuests(array1);

@@ -87,7 +87,7 @@ router.get("/", async (req, res) => {
 // get user's quests
 router.get("/specific", auth, async (req, res) => {
   const user = await User.findById(req.user._id);
-  const quests = await Quest.find({ _id: user.quests });
+  const quests = await Quest.find({ _id: user.quests, state: "accepted" });
   if (!quests) return res.status(404).send("Can't find quests");
   res.status(200).send({ data: quests });
 });
@@ -103,7 +103,7 @@ router.get("/specific-l/:id", async (req, res) => {
 // get user's proposed quests
 router.get("/proposed-quests", auth, async (req, res) => {
   const user = await User.findById(req.user._id);
-  const quests = await Quest.find({ _id: user.quests, state: "completed" });
+  const quests = await Quest.find({ _id: user.proposedQuests });
   if (!quests) return res.status(404).send("Can't find quests");
   res.status(200).send({ data: quests });
 });
@@ -111,7 +111,10 @@ router.get("/proposed-quests", auth, async (req, res) => {
 // get user's finished quests
 router.get("/finished", auth, async (req, res) => {
   const user = await User.findById(req.user._id);
-  const quests = await Quest.find({ _id: user.proposedQuests });
+  const quests = await Quest.find({
+    _id: user.quests,
+    state: "completed",
+  });
   if (!quests) return res.status(404).send("Can't find quests");
   res.status(200).send({ data: quests });
 });
@@ -156,6 +159,45 @@ router.put("/edit/:id", auth, async (req, res) => {
   quest.description = req.body.description;
   quest.points = req.body.points;
   await quest.save();
+  await user.save();
+
+  res.status(200).send({
+    data: quest,
+    message: "Successfully updated quest!",
+  });
+});
+
+// edit quest :id, for client
+router.put("/complete/:id", auth, async (req, res) => {
+  const schema = Joi.object({
+    title: Joi.string().required(),
+    description: Joi.string().allow(""),
+    details: Joi.string().allow(""),
+    points: Joi.string().allow(""),
+  });
+  const { error } = schema.validate(req.body);
+  if (error) return res.status(400).send({ message: error.details[0].message });
+
+  const quest = await Quest.findById(req.params.id);
+  if (!quest) return res.status(404).send({ message: "Can't find the quest!" });
+
+  const user = await User.findById(req.user._id);
+  // if (!user._id.equals(quest.participant))
+  //   return res
+  //     .status(403)
+  //     .send({ message: user.admin + "User does't have access to edit!" });
+
+  quest.title = req.body.title;
+  quest.description = req.body.description;
+  quest.details = req.body.details;
+  quest.points = req.body.points;
+  quest.state = "completed";
+
+  user.points = +user.points + +quest.points;
+
+  // if(user.points)
+  await quest.save();
+  await user.save();
 
   res.status(200).send({
     data: quest,

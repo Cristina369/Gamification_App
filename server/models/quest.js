@@ -6,6 +6,7 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 const questSchema = new mongoose.Schema({
   title: { type: String, required: true },
   description: { type: String, required: true },
+  details: { type: String, required: true },
   state: { type: String, default: "proposed" },
   user: { type: ObjectId, ref: "user", required: true },
   participant: { type: ObjectId, ref: "user" },
@@ -17,6 +18,7 @@ const validate = (quest) => {
     _id: Joi.string(),
     title: Joi.string().required(),
     description: Joi.string().allow(""),
+    details: Joi.string().allow(""),
     state: Joi.string().allow(""),
     user: Joi.string().allow(""),
     points: Joi.string().allow(""),
