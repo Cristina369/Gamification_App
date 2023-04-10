@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import Image from "./../../images/profile.jpg";
 import { updateUser } from "../../redux/user/api";
 import Joi from "joi";
 
@@ -9,6 +10,8 @@ const EditProfile = () => {
   const [data, setData] = useState({
     firstName: "",
     lastName: "",
+    position: "",
+    // image: "",
     email: "",
     birthDate: "",
   });
@@ -39,6 +42,8 @@ const EditProfile = () => {
         firstName: user.firstName,
         lastName: user.lastName,
         email: user.email,
+        // image: user.image,
+        position: user.position,
         birthDate: user.birthDate,
       };
       setData(dk);
@@ -46,61 +51,91 @@ const EditProfile = () => {
   }, [user]);
 
   return (
-    <section className="w-10/12 h-full absolute block right-0 top-14 bg-white p-20">
-      <div>
-        <form onSubmit={handleSubmit} className="px-48 py-10">
-          <h1 className="text-black font-light desktop:text-7xl text-center pb-10 mobile:text-2xl tablet:text-4xl">
-            Edit Profile
-          </h1>
-          <div className="flex flex-row w-full m-2">
-            <input
-              label="Introduceti numele"
-              placeholder="Nume"
-              name="firstName"
-              onChange={handleInputState}
-              schema={schema.firstName}
-              value={data.firstName}
-              className="block py-3 px-2 text-sm w-full mr-1 text-black bg-transparent border-[1px] border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
-              required={true}
-            />
-            <input
-              label="Introduceti numele"
-              placeholder="Nume"
-              name="lastName"
-              onChange={handleInputState}
-              value={data.lastName}
-              className="block py-3 px-2 text-sm w-full ml-1 text-black bg-transparent border-[1px] border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
-              required={true}
-            />
+    <section className="w-10/12 h-full absolute block right-0 pt-32 bg-gray-100 px-5">
+      <div className="flex flex-col justify-center items-center">
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-row w-10/12 justify-center items-center p-10 gap-7"
+        >
+          <div className="bg-white py-16 w-4/12 flex flex-col justify-center items-center">
+            <div>
+              <img
+                className="object-cover rounded-full w-40 h-40"
+                src={Image}
+                alt={"image" + data.firstName + data.lastName}
+              />
+            </div>
+            <h1 className="text-black text-3xl font-thin flex flex-row gap-2 pt-5">
+              {data.firstName} {data.lastName}
+            </h1>
+            <h1 className="text-gray-700 text-2xl font-thin mt-3">
+              {data.position}
+            </h1>
           </div>
-          <input
-            label="Introduceti numele"
-            placeholder="Nume"
-            name="email"
-            type="email"
-            onChange={handleInputState}
-            value={data.email}
-            className="block py-3 px-2 text-sm w-full m-2 text-black bg-transparent border-[1px] border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
-            required={true}
-          />
-          <input
-            label="Introduceti ziua de nastere"
-            name="birthDate"
-            type="text"
-            placeholder="DD-MM-YYYY"
-            onChange={handleInputState}
-            schema={schema.birthDate}
-            value={data.birthDate}
-            className="block py-3 px-2 text-sm w-full m-2 text-black bg-transparent border-[1px] border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
-            required={true}
-          />
-          <div className="flex justify-end w-full pt-3">
-            <button
-              type="submit"
-              className="bg-transparent border-[1px] border-gray-300 px-6 py-3 "
-            >
-              Update profile
-            </button>
+          <div className="flex flex-col w-8/12 justify-center items-center bg-white py-20 px-10">
+            <h1 className="text-black font-light text-3xl mb-5 ">
+              Edit profile
+            </h1>
+            <div className="flex flex-row m-3 w-full">
+              <input
+                label="Introduceti numele"
+                placeholder="Nume"
+                name="firstName"
+                onChange={handleInputState}
+                schema={schema.firstName}
+                value={data.firstName}
+                className="block py-3 px-2 text-sm w-full mr-1 text-black bg-transparent border-[1px] border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
+                required={true}
+              />
+              <input
+                label="Introduceti numele"
+                placeholder="Nume"
+                name="lastName"
+                onChange={handleInputState}
+                value={data.lastName}
+                className="block py-3 px-2 text-sm w-full ml-1 text-black bg-transparent border-[1px] border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
+                required={true}
+              />
+            </div>
+            <input
+              label="Introduceti numele"
+              placeholder="Nume"
+              name="email"
+              type="email"
+              onChange={handleInputState}
+              value={data.email}
+              className="block py-3 px-2 text-sm w-full m-2 text-black bg-transparent border-[1px] border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
+              required={true}
+            />
+            <input
+              label="Introduceti numele"
+              placeholder="Position"
+              name="position"
+              type="position"
+              onChange={handleInputState}
+              value={data.position}
+              className="block py-3 px-2 text-sm w-full m-2 text-black bg-transparent border-[1px] border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
+              required={true}
+            />
+            <input
+              label="Introduceti ziua de nastere"
+              name="birthDate"
+              type="text"
+              placeholder="DD-MM-YYYY"
+              onChange={handleInputState}
+              schema={schema.birthDate}
+              value={data.birthDate}
+              className="block py-3 px-2 text-sm w-full m-2 text-black bg-transparent border-[1px] border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
+              required={true}
+            />
+            <div className="flex justify-end w-full pt-3">
+              <button
+                type="submit"
+                className="bg-transparent border-[1px] border-gray-300 px-6 py-3 "
+              >
+                Update profile
+              </button>
+            </div>
           </div>
         </form>
       </div>

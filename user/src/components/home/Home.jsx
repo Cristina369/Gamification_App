@@ -27,7 +27,7 @@ const Home = () => {
 
   return (
     <>
-      <section className="mobile:mt-16 mobile:pt-4 tablet:mt-20 tablet:pt-8">
+      <section className="w-10/12 h-full absolute block right-0 top-14 bg-white p-20">
         <div className="homepage relative z-0">
           <h1 className="font-medium pb-60 pt-44 text-center px-24 mobile:px-5 tablet:px-24">
             <div className="py-28 backdrop-opacity-10 backdrop-invert bg-white/50">

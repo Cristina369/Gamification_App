@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getUser } from "../../../redux/user/api";
-// import { getBlog } from "../../../redux/blog/api";
-import { AiOutlineMenu } from "react-icons/ai";
 import { logout } from "../../../redux/auth";
 
 const Header = () => {
@@ -39,6 +37,24 @@ const Header = () => {
       <section className="bg-white w-2/12 flex flex-col h-full fixed pl-6 justify-center border-r border-black">
         <div>
           <ul>
+            <li
+              className="absolute top-10 text-5xl"
+              tabIndex="-1"
+              id="menu-item-0"
+            >
+              <Link to="/">BLUE</Link>
+            </li>
+            <li className="nav-link" tabIndex="-1" id="menu-item-0">
+              <Link
+                to="/"
+                onClick={() => {
+                  setActive(!active);
+                  setOpen(!open);
+                }}
+              >
+                Home
+              </Link>
+            </li>
             <li className="nav-link links-user" tabIndex="-1" id="menu-item-0">
               <Link
                 to="/profile"
@@ -117,14 +133,7 @@ const Header = () => {
               </Link>
             </li>
             <li className="nav-link links-user">
-              <Link
-                to="/login"
-                onClick={() => {
-                  setOpen(!open);
-                  setActive(!active);
-                  handleLogout();
-                }}
-              >
+              <Link to="/login" className="absolute bottom-10 text-2xl">
                 Logout
               </Link>
             </li>
