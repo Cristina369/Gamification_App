@@ -66,6 +66,18 @@ router.get("/proposed", async (req, res) => {
   res.status(200).send({ data: quest });
 });
 
+// get all finished quests
+router.get("/finished-quests", auth, async (req, res) => {
+  const quest = await Quest.find({ state: "completed" });
+  res.status(200).send({ data: quest });
+});
+
+// get all finished quests
+router.get("/accepted-quests", auth, async (req, res) => {
+  const quest = await Quest.find({ state: "accepted" });
+  res.status(200).send({ data: quest });
+});
+
 // get all quests
 router.get("/", async (req, res) => {
   const quest = await Quest.find();
@@ -76,6 +88,14 @@ router.get("/", async (req, res) => {
 router.get("/specific", auth, async (req, res) => {
   const user = await User.findById(req.user._id);
   const quests = await Quest.find({ _id: user.quests });
+  if (!quests) return res.status(404).send("Can't find quests");
+  res.status(200).send({ data: quests });
+});
+
+// get user's quests lenght
+router.get("/specific-l/:id", async (req, res) => {
+  const user = await User.findById(req.params.id);
+  const quests = await Quest.find({ _id: user.quests }).count();
   if (!quests) return res.status(404).send("Can't find quests");
   res.status(200).send({ data: quests });
 });

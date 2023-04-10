@@ -9,6 +9,11 @@ import Login from "./components/login/Login";
 import Header from "./components/common/heading/Header";
 import Users from "./components/users/Users";
 import Leaderboard from "./components/leaderboard/Leaderboard";
+import AllQuests from "./components/allquests/AllBadges";
+import ProposedQuests from "./components/proposedquests/ProposedQuests";
+import FinishedQuests from "./components/finisedquests/FinishedQuests";
+import AcceptedQuests from "./components/acceptedquests/AcceptedQuests";
+import AllBadges from "./components/allquests/AllBadges";
 // import AllBlog from "./components/allblogs/AllBlogs";
 // import Users from "./components/users/Users";
 // import MyBlogs from "./components/blog/MyBlogs";
@@ -46,6 +51,11 @@ const App = () => {
             <Route path="/" exact element={<Home />} />
             <Route exact path="/users" element={<Users />} />
             <Route exact path="/leaderboard" element={<Leaderboard />} />
+            <Route exact path="/all-quests" element={<AllQuests />} />
+            <Route exact path="/proposed-quests" element={<ProposedQuests />} />
+            <Route exact path="/finished-quests" element={<FinishedQuests />} />
+            <Route exact path="/accepted-quests" element={<AcceptedQuests />} />
+            <Route exact path="/badges" element={<AllBadges />} />
 
             {/* <Route exact path="/my-blogs" element={<MyBlogs />} />
             <Route exact path="/blogs" element={<AllBlog />} />

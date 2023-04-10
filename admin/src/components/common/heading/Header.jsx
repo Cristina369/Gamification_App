@@ -54,22 +54,27 @@ const Header = () => {
               </Link>
             </li>
             <li className="nav-link">
-              <Link to="/blogs" onClick={() => setOpen(!open)}>
+              <Link to="/all-quests" onClick={() => setOpen(!open)}>
                 All Quests
               </Link>
             </li>
             <li className="nav-link">
-              <Link to="/my-blogs" onClick={() => setOpen(!open)}>
+              <Link to="/finished-quests" onClick={() => setOpen(!open)}>
                 Finished Quests
               </Link>
             </li>
             <li className="nav-link">
-              <Link to="/add-blog" onClick={() => setOpen(!open)}>
+              <Link to="/proposed-quests" onClick={() => setOpen(!open)}>
                 Proposed Quests
               </Link>
             </li>
             <li className="nav-link">
-              <Link to="/add-blog" onClick={() => setOpen(!open)}>
+              <Link to="/accepted-quests" onClick={() => setOpen(!open)}>
+                Accepted Quests
+              </Link>
+            </li>
+            <li className="nav-link">
+              <Link to="/badges" onClick={() => setOpen(!open)}>
                 Badges
               </Link>
             </li>
