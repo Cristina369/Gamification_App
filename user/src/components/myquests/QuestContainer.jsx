@@ -21,13 +21,13 @@ const QuestContainer = ({ quests }) => {
               {quest.description ? quest.description.substring(0, 15) : ""}...
             </h1>
             <h1 className="text-black font-normal text-xl">{quest.points}</h1>
-            <div>
+            {/* <div>
               <button className="bg-green-100 px-4 py-3 rounded-md">
                 <Link to={`/complete-quest/${quest._id}`}>
                   Complete the quests
                 </Link>
               </button>
-            </div>
+            </div> */}
           </div>
         ))}
       </div>
