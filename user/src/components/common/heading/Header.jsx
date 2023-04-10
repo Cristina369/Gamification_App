@@ -88,7 +88,7 @@ const Header = () => {
                 My Quests
               </Link>
             </li>
-            <li className="nav-link links-user" tabIndex="-1" id="menu-item-0">
+            {/* <li className="nav-link links-user" tabIndex="-1" id="menu-item-0">
               <Link
                 to="/finished-quests"
                 onClick={() => {
@@ -98,7 +98,7 @@ const Header = () => {
               >
                 Finished Quests
               </Link>
-            </li>
+            </li> */}
             <li className="nav-link links-user">
               <Link
                 to="/proposed-quest"

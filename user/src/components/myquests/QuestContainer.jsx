@@ -3,16 +3,26 @@ import { Link } from "react-router-dom";
 
 const QuestContainer = ({ quests }) => {
   return (
-    <section className="w-10/12 h-full absolute block right-0 top-14 bg-white p-20">
-      <div className="grid grid-cols-2 w-fit justify-center place-items-center mobile:grid-cols-1 tablet:grid-cols-2 mobile:w-full tablet:w-fit">
+    <section className=" w-12/12 px-28 py-10 bg-white">
+      <h1 className="text-black font-normal text-2xl mb-7 pb-4 border-gray-100 border-b-[2px]">
+        My Quests
+      </h1>
+      <div className=" bg-white flex flex-col justify-center w-full gap-4">
         {quests.map((quest, index) => (
-          <div>
-            <h1>Title: {quest.title}</h1>
-            <h1>Desc: {quest.description}</h1>
-            <h1>Points: {quest.points}</h1>
-            <h1>Author: {quest.user}</h1>
+          // <Quest quest={quest} />
+          <div
+            key={index}
+            className="border-b-[2px] border-gray-100 flex flex-row items-center justify-between px-16 py-7"
+          >
+            <h1 className="text-black font-normal text-xl w-[250px]">
+              {quest.title}
+            </h1>
+            <h1 className="text-black font-normal text-xl">
+              {quest.description ? quest.description.substring(0, 15) : ""}...
+            </h1>
+            <h1 className="text-black font-normal text-xl">{quest.points}</h1>
             <div>
-              <button className="bg-green-300">
+              <button className="bg-green-100 px-4 py-3 rounded-md">
                 <Link to={`/complete-quest/${quest._id}`}>
                   Complete the quests
                 </Link>
