@@ -69,11 +69,11 @@ const Profile = () => {
           </div>
           <div>
             <h1>Points: {data.points}</h1>
-            <h1>Badge: {data.badges}</h1>
-            <h1>Quests: {data.quests}</h1>
+            <h1>Badge: {data.badges.length}</h1>
+            <h1>Quests: {data.quests.length}</h1>
             <h1>
               Proposed Quests:
-              {data.proposedQuests}
+              {data.proposedQuests.length}
             </h1>
           </div>
         </div>

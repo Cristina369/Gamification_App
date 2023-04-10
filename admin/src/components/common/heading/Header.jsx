@@ -78,18 +78,8 @@ const Header = () => {
                 Badges
               </Link>
             </li>
-            <li
-              className="nav-link mobile:block tablet:hidden logout"
-              onClick={handleLogout}
-            >
-              Logout
-            </li>
             <li>
-              <div className="text-left absolute right-20 top-10 mobile:hidden tablet:display">
-                <li className="text-2xl px-3 py-2 border-[1px] border-gray-300 ">
-                  <button onClick={handleLogout}>Logout</button>
-                </li>
-              </div>
+              <button onClick={handleLogout}>Logout</button>
             </li>
           </ul>
         </div>

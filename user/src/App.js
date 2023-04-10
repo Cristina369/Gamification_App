@@ -26,6 +26,7 @@ import Leaderboard from "./components/leaderboard/Leaderboard";
 import MyQuests from "./components/myquests/MyQuests";
 import ProposedQuests from "./components/proposedquests/ProposedQuests";
 import FinishedQuests from "./components/finisedquests/FinishedQuests";
+import CompleteQuest from "./components/myquests/CompleteQuest";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -66,7 +67,12 @@ const App = () => {
             <Route exact path="/create-quest" element={<CreateQuest />} />
             <Route exact path="/proposed-quest" element={<ProposedQuests />} />
             <Route exact path="/finished-quests" element={<FinishedQuests />} />
-
+            {/* <Route exact path="/quest/:id" element={<UserContainer />} /> */}
+            <Route
+              exact
+              path="/complete-quest/:id"
+              element={<CompleteQuest />}
+            />
             {/*<Route exact path="/all-blogs" element={<AllBlogs />} />
         <Route exact path="/blogs" element={<Blogs />} />
         <Route exact path="/profile" element={<Profile />} />
@@ -83,6 +89,7 @@ const App = () => {
         <Fragment>
           <Head />
           <Routes>
+            <Route path="/" exact element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
           </Routes>
