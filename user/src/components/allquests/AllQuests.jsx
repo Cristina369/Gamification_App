@@ -36,11 +36,13 @@ const AllQuests = () => {
   }, []);
 
   return (
-    <section className="w-10/12 h-full absolute block right-0 pt-32 px-5 bg-gray-100">
+    <section className="w-10/12 h-full absolute block right-0 pt-28 px-5 ">
       <div>
         {data.points > 500 ? (
           <Link to="/create-quest">
-            <h1>Create a quest</h1>
+            <div className="border-[1px] border-primary bg-secondary p-4 w-fit text-white rounded-3xl absolute top-24 right-32">
+              <h1>Create a quest</h1>
+            </div>
           </Link>
         ) : (
           <div></div>

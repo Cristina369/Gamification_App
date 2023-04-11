@@ -34,11 +34,11 @@ const Header = () => {
 
   return (
     <>
-      <section className="bg-white w-2/12 flex flex-col h-full fixed pl-6 justify-center border-r border-black">
+      <section className="bg-white w-2/12 flex flex-col h-full fixed pl-6 justify-center border-r border-blue-900">
         <div>
           <ul>
             <li
-              className="absolute top-14 text-5xl ml-5"
+              className="absolute top-10 text-[84px] ml-4 font-extrabold logo"
               tabIndex="-1"
               id="menu-item-0"
             >
@@ -55,7 +55,7 @@ const Header = () => {
                   isPending
                     ? ""
                     : isActive
-                    ? "border-l-4 border-blue-400 pl-3 my-6 w-full py-2"
+                    ? "border-l-4 border-primary pl-3 my-6 w-full py-2"
                     : ""
                 }
               >
@@ -73,7 +73,7 @@ const Header = () => {
                   isPending
                     ? ""
                     : isActive
-                    ? "border-l-4 border-blue-400 pl-3 my-6 w-full py-2"
+                    ? "border-l-4 border-primary pl-3 my-6 w-full py-2"
                     : ""
                 }
               >
@@ -91,7 +91,7 @@ const Header = () => {
                   isPending
                     ? ""
                     : isActive
-                    ? "border-l-4 border-blue-400 pl-3 my-6 w-full py-2"
+                    ? "border-l-4 border-primary pl-3 my-6 w-full py-2"
                     : ""
                 }
               >
@@ -109,7 +109,7 @@ const Header = () => {
                   isPending
                     ? ""
                     : isActive
-                    ? "border-l-4 border-blue-400 pl-3 my-6 w-full py-2"
+                    ? "border-l-4 border-primary pl-3 my-6 w-full py-2"
                     : ""
                 }
               >
@@ -156,7 +156,7 @@ const Header = () => {
                   isPending
                     ? ""
                     : isActive
-                    ? "border-l-4 border-blue-400 pl-3 my-6 w-full py-2"
+                    ? "border-l-4 border-primary pl-3 my-6 w-full py-2"
                     : ""
                 }
               >
@@ -174,7 +174,7 @@ const Header = () => {
                   isPending
                     ? ""
                     : isActive
-                    ? "border-l-4 border-blue-400 pl-3 my-6 w-full py-2"
+                    ? "border-l-4 border-primary pl-3 my-6 w-full py-2"
                     : ""
                 }
               >

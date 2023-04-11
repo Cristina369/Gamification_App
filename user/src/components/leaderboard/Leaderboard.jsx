@@ -67,7 +67,7 @@ function Leaderboard() {
                             </p>
                           </div>
                           <div className="">
-                            <h1 className="items-center text-3xl font-medium text-gray-900">
+                            <h1 className="items-center text-3xl font-medium text-primary">
                               {user.points}
                             </h1>
                             <h1 className="items-center text-xl font-normal text-gray-700 mt-2">

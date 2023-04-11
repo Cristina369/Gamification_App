@@ -63,7 +63,7 @@ const Profile = () => {
   }, [user]);
 
   return (
-    <section className="w-10/12 h-full absolute block right-0 pt-10 bg-white p-5">
+    <section className="w-10/12 h-fit absolute block right-0 pt-10 bg-gradient-to-r from-[#125755] to-[#dae890] p-5">
       <div className="px-48 py-10">
         <div className="flex flex-row gap-5 mobile:flex-col tablet:flex-row bg-white shadow-lg px-6 py-10">
           <div className="p-10 w-5/12 flex flex-col justify-center items-center">
@@ -82,7 +82,7 @@ const Profile = () => {
               />
               {/* <Badge badges={data.badges} size={20} /> */}
             </div>
-            <h1 className="text-black text-3xl font-thin flex flex-row gap-2 pt-5">
+            <h1 className="text-primary text-3xl font-thin flex flex-row gap-2 pt-5">
               {data.firstName} {data.lastName}
             </h1>
             <h1 className="text-gray-700 text-2xl font-thin mt-3">

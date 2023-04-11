@@ -31,7 +31,7 @@ const Leaders = () => {
             .map((user, index) => (
               <Link
                 to={`/users/${user._id}`}
-                className={` grid w-11/12 p-6 border border-gray-200 rounded-lg shadow hover:bg-blue-100 ${
+                className={` grid w-11/12 p-6 border border-gray-200 rounded-lg shadow hover:bg-third ${
                   index + 1 === 1
                     ? "bg-white col-start-2 col-end-3  row-end-1 row-start-1 -mt-10 mb-10"
                     : "bg-white col-start-auto col-end-auto row-end-1 row-start-1"
@@ -43,7 +43,7 @@ const Leaders = () => {
                     index + 1 === 1 ? "" : ""
                   }`}
                 >
-                  <h5 class="text-8xl font-bold tracking-tight text-gray-700 -mt-16 mb-5 -ml-40">
+                  <h5 class="text-8xl font-bold tracking-tight text-secondary -mt-16 mb-5 -ml-40">
                     {index + 1}
                   </h5>
                   <div className="flex flex-col">
@@ -52,7 +52,7 @@ const Leaders = () => {
                       src={user.image}
                       alt="Neil image"
                     />
-                    <div className="p-3  rounded-full w-16 h-16 -mt-10 bg-black flex justify-center items-center">
+                    <div className="p-3  rounded-full w-16 h-16 -mt-10 bg-primary flex justify-center items-center">
                       <p class="font-2xl text-white font-semibold text-2xl">
                         {user.points}
                       </p>

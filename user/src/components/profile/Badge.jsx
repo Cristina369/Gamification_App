@@ -53,7 +53,7 @@ const Badge = ({ badges, size }) => {
 
   return (
     // <section className="w-10/12 h-full absolute block right-0 pt-10 p-5 -mb-10">
-    <div className="border-[1px] border-gray-200 fill-black p-3 w-10 h-10 rounded-full bg-white -mt-10">
+    <div className="border-[1px] border-gray-200 fill-black p-3 w-10 h-10 rounded-full bg-third -mt-10">
       <img src={badgesList.image} alt={badgesList.title} className="w-7" />
     </div>
     // </section>

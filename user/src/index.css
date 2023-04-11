@@ -27,8 +27,18 @@
 
 @layer base {
   html {
-    font-family: "EB Garamond", serif;
+    font-family: "Kanit", sans-serif;
     background-color: white;
+  }
+  .logo {
+    font-size: 72px;
+    background: linear-gradient(
+      135deg,
+      rgb(18, 87, 85) 40%,
+      rgb(218, 232, 144)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .hidden {
