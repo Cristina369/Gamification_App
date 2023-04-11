@@ -44,7 +44,7 @@ const Header = () => {
             >
               <Link to="/panel">BLUE</Link>
             </li>
-            <li className="nav-link w-full" tabIndex="-1" id="menu-item-0">
+            {/* <li className="nav-link w-full" tabIndex="-1" id="menu-item-0">
               <NavLink
                 to="/panel"
                 onClick={() => {
@@ -61,7 +61,7 @@ const Header = () => {
               >
                 Panel
               </NavLink>
-            </li>
+            </li> */}
             <li className="nav-link links-user" tabIndex="-1" id="menu-item-0">
               <NavLink
                 to="/profile"

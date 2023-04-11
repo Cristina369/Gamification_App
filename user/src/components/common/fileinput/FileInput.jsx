@@ -83,7 +83,7 @@ const FileInput = ({
         <img
           src={typeof value === "string" ? value : URL.createObjectURL(value)}
           alt="file"
-          className="w-96"
+          className="w-72"
         />
       )}
       {type === "audio" && value && (
@@ -96,7 +96,7 @@ const FileInput = ({
         onClick={handleUpload}
         startIcon={<AiOutlineCloudUpload />}
         label="Incarca"
-        className={`bg-transparent border-[1px] border-gray-300 px-6 py-3 mt-3 ${
+        className={`bg-transparent border-2 border-white text-white px-6 py-3 rounded-3xl my-5 ${
           visible ? "visible" : "invisible"
         }`}
       >

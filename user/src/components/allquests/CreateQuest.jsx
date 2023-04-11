@@ -56,14 +56,14 @@ const CreateQuest = () => {
 
   return (
     <>
-      <section className="w-10/12 h-full absolute block right-0 top-14 bg-white p-20">
-        <div className="profil-container p-20  shadow-2xl w-9/12 flex flex-col items-center mobile:p-5 tablet:p-10 desktop:p-20 mobile:flex-col tablet:flex-col mobile:w-11/12 tablet:w-9/12">
-          <h1 className="text-black font-light desktop:text-4xl text-center pb-10 mobile:text-2xl tablet:text-4xl">
+      <section className="w-10/12 h-full absolute block right-0 top-14 bg-white py-20">
+        <div className="w-full profil-container  shadow-2xl flex flex-col items-center justify-center mobile:p-5 tablet:p-10 desktop:p-20 mobile:flex-col tablet:flex-col mobile:w-11/12 tablet:w-10/12 profile">
+          <h1 className="text-black font-light desktop:text-6xl text-center pb-10 mobile:text-2xl tablet:text-4xl">
             Add Quest
           </h1>
           <form
             onSubmit={handleSubmit}
-            className="profil-form pt-5 flex flex-col justify-center items-center w-7/12 desktop:pr-16 tablet:pr-10 mobile:pr-0 mobile:w-full tablet:w-7/12"
+            className="profil-form pt-5 flex flex-col justify-center items-center w-full desktop:pr-16 tablet:pr-10 mobile:pr-0 mobile:w-full tablet:w-7/12"
           >
             <div className="flex flex-row w-full m-2 gap-4">
               <input
@@ -71,7 +71,7 @@ const CreateQuest = () => {
                 placeholder="Title"
                 name="title"
                 onChange={handleInputState}
-                className="block py-3 px-2 text-sm w-full my-2 text-black bg-transparent border-[1px] border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
+                className="block py-3 px-2 text-sm w-full my-2 text-white bg-transparent border-[1px] border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
                 value={data.title}
                 required={true}
               />
@@ -80,7 +80,7 @@ const CreateQuest = () => {
                 placeholder="Description"
                 name="description"
                 onChange={handleInputState}
-                className="block py-3 px-2 text-sm w-full my-2 text-black bg-transparent border-[1px] border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
+                className="block py-3 px-2 text-sm w-full my-2 text-white bg-transparent border-[1px] border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
                 value={data.description}
                 required={true}
               />
@@ -92,14 +92,14 @@ const CreateQuest = () => {
                 name="points"
                 onChange={handleInputState}
                 value={data.points}
-                className="block py-3 px-2 text-sm w-full my-2 text-black bg-transparent border-[1px] border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
+                className="block py-3 px-2 text-sm w-full my-2 text-white bg-transparent border-[1px] border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
                 required={true}
               />
             </div>
             <div className="w-full flex justify-end items-end">
               <button
                 type="submit"
-                className="bg-transparent border-[1px] border-gray-300 px-6 py-3 "
+                className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-3xl"
               >
                 Add quest
               </button>

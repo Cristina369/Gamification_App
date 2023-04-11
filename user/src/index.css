@@ -19,7 +19,7 @@
 }
 
 .icon-profile-edit {
-  @apply stroke-slate-300;
+  @apply stroke-white;
 }
 .badge svg {
   @apply w-16;
@@ -32,13 +32,12 @@
   }
   .logo {
     font-size: 72px;
-    background: linear-gradient(
-      135deg,
-      rgb(18, 87, 85) 40%,
-      rgb(218, 232, 144)
-    );
+    background: linear-gradient(135deg, #19376d 40%, #a5d7e8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+  .profile {
+    background: linear-gradient(45deg, #19376d, #a5d7e8);
   }
 
   .hidden {

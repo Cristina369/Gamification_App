@@ -13,7 +13,7 @@ const Instructions = () => {
             href="#"
             class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100"
           >
-            <h5 class="mb-2 text-4xl font-bold tracking-tight text-gray-900 ">
+            <h5 class="mb-2 text-4xl font-bold tracking-tight text-primary">
               01
             </h5>
             <div className="w-7/12 h-[1px] bg-slate-200 mb-3"></div>
@@ -30,7 +30,7 @@ const Instructions = () => {
             href="#"
             class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 "
           >
-            <h5 class="mb-2 text-4xl font-bold tracking-tight text-gray-900 ">
+            <h5 class="mb-2 text-4xl font-bold tracking-tight text-primary">
               02
             </h5>
             <div className="w-7/12 h-[1px] bg-slate-200 mb-3"></div>
@@ -47,7 +47,7 @@ const Instructions = () => {
             href="#"
             class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100"
           >
-            <h5 class="mb-2 text-4xl font-bold tracking-tight text-gray-900">
+            <h5 class="mb-2 text-4xl font-bold tracking-tight text-primary">
               03
             </h5>
             <div className="w-7/12 h-[1px] bg-slate-200 mb-3"></div>
@@ -55,7 +55,7 @@ const Instructions = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Recusandae repellendus facilis nulla animi ex sint cumque ipsam a,
               at iure. Facere molestiae praesentium magnam est libero sit
-              adipisci doloribus quasi.
+              adipisci doloribus quasi.Facere molestiae praesen
             </p>
           </a>
         </div>
@@ -64,7 +64,7 @@ const Instructions = () => {
             href="#"
             class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100"
           >
-            <h5 class="mb-2 text-4xl font-bold tracking-tight text-gray-900">
+            <h5 class="mb-2 text-4xl font-bold tracking-tight text-primary">
               04
             </h5>
             <div className="w-7/12 h-[1px] bg-slate-200 mb-3"></div>

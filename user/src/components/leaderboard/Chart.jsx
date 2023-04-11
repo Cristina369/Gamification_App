@@ -67,16 +67,8 @@ function Chart({ badges, quests, proposedQuests }) {
       {
         label: "numbers of",
         data: [badges, quests, proposedQuests],
-        backgroundColor: [
-          "rgb(255, 204, 204)",
-          "rgb(204, 255, 255)",
-          "rgb(230, 255, 230)",
-        ],
-        borderColor: [
-          "rgb(255, 204, 204)",
-          "rgb(204, 255, 255)",
-          "rgb(230, 255, 230)",
-        ],
+        backgroundColor: ["#82a4e3", "#acc2ec", "#97b3e7"],
+        borderColor: ["#82a4e3", "#acc2ec", "#97b3e7"],
         borderWidth: 1,
       },
     ],
