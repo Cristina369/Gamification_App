@@ -4,7 +4,7 @@ import FAQ from "./FAQ";
 const Instructions = () => {
   return (
     <section className="w-10/12 h-full absolute block right-0 top-14 bg-white p-20">
-      <h1 className="text-black font-bold text-[220px] -mb-36 ml-10 -mt-32">
+      <h1 className="text-gray-200 font-bold text-[200px] -mb-36 ml-10 -mt-32">
         STEPS
       </h1>
       <div className="w-full flex flex-row gap-5 justify-center items-start">
@@ -55,7 +55,7 @@ const Instructions = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Recusandae repellendus facilis nulla animi ex sint cumque ipsam a,
               at iure. Facere molestiae praesentium magnam est libero sit
-              adipisci doloribus quasi.Facere molestiae praesen
+              adipisci doloribus quasi.
             </p>
           </a>
         </div>

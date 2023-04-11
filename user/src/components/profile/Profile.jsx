@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { updateUser } from "../../redux/user/api";
 import { Link } from "react-router-dom";
 import { FiEdit } from "react-icons/fi";
+import Chart from "./../leaderboard/Chart";
 import Image from "./../../images/profile.jpg";
 import Joi from "joi";
 
@@ -61,10 +62,10 @@ const Profile = () => {
   }, [user]);
 
   return (
-    <section className="w-10/12 h-full absolute block right-0 pt-10 bg-gray-100 p-5">
+    <section className="w-10/12 h-full absolute block right-0 pt-10 bg-white p-5">
       <div className="px-48 py-10">
         <div className="flex flex-row gap-5 mobile:flex-col tablet:flex-row">
-          <div className="bg-white p-10 w-5/12 flex flex-col justify-center items-center">
+          <div className="bg-white shadow-2xl p-10 w-5/12 flex flex-col justify-center items-center">
             <div className="absolute top-[120px] left-[555px]">
               <button>
                 <Link to="/edit-profile">
@@ -86,7 +87,7 @@ const Profile = () => {
               {data.position}
             </h1>
           </div>
-          <div className="bg-white w-7/12 flex justify-center">
+          <div className="bg-white shadow-2xl w-7/12 flex justify-center">
             <ul className="flex flex-col gap-4 justify-center p-4 w-10/12">
               <li className="flex flex-row justify-between items-center border-b-[1px] border-gray-200 ">
                 <h1 className="text-black font-normal text-2xl pr-4">
@@ -122,7 +123,7 @@ const Profile = () => {
           </div>
         </div>
         <div className="flex flex-row gap-5 mt-3">
-          <ul className="bg-white py-10 w-5/12 flex flex-col justify-center px-20">
+          <ul className="bg-white shadow-2xl py-10 w-5/12 flex flex-col justify-center px-20">
             <li className="flex flex-row justify-between">
               <h1 className="text-black font-normal text-xl">Points </h1>
               <h1 className="text-gray-700 font-medium text-lg text-right">
@@ -150,8 +151,8 @@ const Profile = () => {
               </h1>
             </li>
           </ul>
-          <div className="bg-white w-7/12 py-10 flex flex-col gap-4 justify-center px-24">
-            <h1>A little chart</h1>
+          <div className="bg-white shadow-2xl w-7/12 py-10 flex flex-col gap-4 justify-center items-center px-24">
+            <Chart />
           </div>
         </div>
       </div>
