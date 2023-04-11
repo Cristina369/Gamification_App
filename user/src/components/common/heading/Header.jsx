@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getUser } from "../../../redux/user/api";
@@ -29,7 +29,7 @@ const Header = () => {
 
   const handleLogout = () => {
     dispatch(logout());
-    window.location = "/login";
+    window.location = "/";
   };
 
   return (
@@ -38,55 +38,83 @@ const Header = () => {
         <div>
           <ul>
             <li
-              className="absolute top-10 text-5xl"
+              className="absolute top-14 text-5xl ml-5"
               tabIndex="-1"
               id="menu-item-0"
             >
-              <Link to="/">BLUE</Link>
+              <Link to="/panel">BLUE</Link>
             </li>
-            <li className="nav-link" tabIndex="-1" id="menu-item-0">
-              <Link
-                to="/"
+            <li className="nav-link w-full" tabIndex="-1" id="menu-item-0">
+              <NavLink
+                to="/panel"
                 onClick={() => {
                   setActive(!active);
                   setOpen(!open);
                 }}
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? ""
+                    : isActive
+                    ? "border-l-4 border-blue-400 pl-3 my-6 w-full py-2"
+                    : ""
+                }
               >
-                Home
-              </Link>
+                Panel
+              </NavLink>
             </li>
             <li className="nav-link links-user" tabIndex="-1" id="menu-item-0">
-              <Link
+              <NavLink
                 to="/profile"
                 onClick={() => {
                   setActive(!active);
                   setOpen(!open);
                 }}
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? ""
+                    : isActive
+                    ? "border-l-4 border-blue-400 pl-3 my-6 w-full py-2"
+                    : ""
+                }
               >
                 Profile
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-link links-user" tabIndex="-1" id="menu-item-0">
-              <Link
+              <NavLink
                 to="/all-quests"
                 onClick={() => {
                   setOpen(!open);
                   setActive(!active);
                 }}
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? ""
+                    : isActive
+                    ? "border-l-4 border-blue-400 pl-3 my-6 w-full py-2"
+                    : ""
+                }
               >
                 All Quests
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-link links-user" tabIndex="-1" id="menu-item-0">
-              <Link
+              <NavLink
                 to="/my-quests"
                 onClick={() => {
                   setOpen(!open);
                   setActive(!active);
                 }}
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? ""
+                    : isActive
+                    ? "border-l-4 border-blue-400 pl-3 my-6 w-full py-2"
+                    : ""
+                }
               >
                 My Quests
-              </Link>
+              </NavLink>
             </li>
             {/* <li className="nav-link links-user" tabIndex="-1" id="menu-item-0">
               <Link
@@ -99,41 +127,65 @@ const Header = () => {
                 Finished Quests
               </Link>
             </li> */}
-            <li className="nav-link links-user">
-              <Link
+            {/* <li className="nav-link links-user">
+              <NavLink
                 to="/proposed-quest"
                 onClick={() => {
                   setOpen(!open);
                   setActive(!active);
                 }}
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? ""
+                    : isActive
+                    ? "border-l-4 border-blue-400 pl-3 my-6 w-full py-2"
+                    : ""
+                }
               >
                 Proposed Quests
-              </Link>
-            </li>
+              </NavLink>
+            </li> */}
             <li className="nav-link links-user">
-              <Link
+              <NavLink
                 to="/leaderboard"
                 onClick={() => {
                   setOpen(!open);
                   setActive(!active);
                 }}
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? ""
+                    : isActive
+                    ? "border-l-4 border-blue-400 pl-3 my-6 w-full py-2"
+                    : ""
+                }
               >
                 Leaderboard
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-link links-user" tabIndex="-1" id="menu-item-0">
-              <Link
+              <NavLink
                 to="/instructions"
                 onClick={() => {
                   setOpen(!open);
                   setActive(!active);
                 }}
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? ""
+                    : isActive
+                    ? "border-l-4 border-blue-400 pl-3 my-6 w-full py-2"
+                    : ""
+                }
               >
                 Instructions
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-link links-user">
-              <Link to="/login" className="absolute bottom-10 text-2xl">
+              <Link
+                onClick={handleLogout}
+                className="absolute bottom-10 text-2xl"
+              >
                 Logout
               </Link>
             </li>

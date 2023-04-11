@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getUser } from "../../redux/user/api";
-// import { getBlog } from "../../../redux/blog/api";
-import { AiOutlineMenu } from "react-icons/ai";
 import { logout } from "../../redux/auth";
 
 const Panel = () => {
@@ -37,7 +34,10 @@ const Panel = () => {
   return (
     <section className="w-10/12 h-full absolute block right-0 top-14 bg-white p-20">
       <div>
-        <h1>Panel</h1>
+        <h1></h1>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
     </section>
   );

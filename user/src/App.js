@@ -55,7 +55,6 @@ const App = () => {
         <Fragment>
           <Header />
           <Routes>
-            <Route path="/" exact element={<Home />} />
             <Route exact path="/users/:id" element={<UserContainer />} />
             <Route exact path="/panel" element={<Panel />} />
             <Route exact path="/profile" element={<Profile />} />
@@ -67,6 +66,7 @@ const App = () => {
             <Route exact path="/create-quest" element={<CreateQuest />} />
             <Route exact path="/proposed-quest" element={<ProposedQuests />} />
             <Route exact path="/finished-quests" element={<FinishedQuests />} />
+
             {/* <Route exact path="/quest/:id" element={<UserContainer />} /> */}
             <Route
               exact

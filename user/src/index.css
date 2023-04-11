@@ -15,7 +15,7 @@
 } */
 
 .nav-link {
-  @apply tablet:font-thin mobile:font-extralight mobile:text-3xl mobile:pt-4 tablet:text-xl desktop:text-2xl pl-3;
+  @apply tablet:font-thin mobile:font-extralight mobile:text-3xl mobile:pt-4 tablet:text-xl desktop:text-2xl pl-5;
 }
 
 .icon-profile-edit {

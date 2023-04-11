@@ -63,7 +63,7 @@ const UserContainer = () => {
                 src={data.image}
                 alt={"image" + data.firstName + data.lastName}
               />
-              <Badge badges={data.badges} />
+              {/* <Badge badges={data.badges} size={10} /> */}
             </div>
             <h1 className="text-black text-3xl font-thin flex flex-row gap-2 pt-5">
               {data.firstName} {data.lastName}

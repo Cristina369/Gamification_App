@@ -44,13 +44,13 @@ function Leaderboard() {
                   >
                     <li class="py-3 sm:py-4">
                       <div class="flex items-center space-x-4">
-                        <div class="flex-shrink-0">
+                        <div class="flex flex-row">
                           <img
                             class="w-20 h-20 rounded-full object-cover"
                             src={user.image}
                             alt="Neil image"
                           />
-                          <Badge badges={data.badges} />
+                          <Badge badges={user.badges} size={5} />
                         </div>
                         <div class="flex-1 min-w-0">
                           <p class="text-xl font-medium text-gray-900 truncate flex flex-row gap-2">

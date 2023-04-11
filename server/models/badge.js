@@ -6,14 +6,14 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 const badgeSchema = new mongoose.Schema({
   title: { type: String, required: true },
   description: { type: String, required: true },
-  users: { type: [ObjectId], default: [] },
+  users: { type: ObjectId, default: [] },
   points: { type: String, default: "0" },
   image: { type: String, required: true },
 });
 
 const validate = (badge) => {
   const schema = Joi.object({
-    _id: Joi.string(),
+    // _id: Joi.string(),
     title: Joi.string().required(),
     description: Joi.string().allow(""),
     points: Joi.string().allow(""),

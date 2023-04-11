@@ -52,7 +52,7 @@ const Leaders = () => {
                       src={user.image}
                       alt="Neil image"
                     />
-                    <Badge badges={user.badges} />
+                    <Badge badges={user.badges} size={5} />
                   </div>
                   <p class="font-normal text-gray-700">
                     {user.firstName}

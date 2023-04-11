@@ -74,13 +74,13 @@ const Profile = () => {
                 </Link>
               </button>
             </div>
-            <div>
+            <div className="flex flex-col">
               <img
                 className="object-cover rounded-full w-40 h-40"
                 src={data.image}
                 alt={"image" + data.firstName + data.lastName}
               />
-              <Badge badges={data.badges} />
+              <Badge badges={data.badges} size={20} />
             </div>
             <h1 className="text-black text-3xl font-thin flex flex-row gap-2 pt-5">
               {data.firstName} {data.lastName}
