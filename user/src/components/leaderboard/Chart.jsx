@@ -9,7 +9,7 @@ import { Pie } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-function Chart() {
+function Chart({ badges, quests, proposedQuests }) {
   const [data, setData] = useState({
     firstName: "",
     lastName: "",
@@ -62,27 +62,20 @@ function Chart() {
   }, [user]);
 
   const datas = {
-    labels: ["Badges", "Quests", "Proposed Quests", "Finished Quests"],
+    labels: ["Badges", "Quests", "Proposed Quests"],
     datasets: [
       {
         label: "numbers of",
-        data: [
-          data.badges.length,
-          data.quests.length,
-          data.proposedQuests.length,
-          data.points.length,
-        ],
+        data: [badges, quests, proposedQuests],
         backgroundColor: [
           "rgb(255, 0, 0)",
           "rgb(128, 255, 255)",
           "rgb(51, 255, 51)",
-          "rgb(255, 163, 26)",
         ],
         borderColor: [
           "rgb(255, 0, 0)",
           "rgb(128, 255, 255)",
           "rgb(51, 255, 51)",
-          "rgb(255, 163, 26)",
         ],
         borderWidth: 1,
       },

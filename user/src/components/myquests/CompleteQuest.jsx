@@ -2,7 +2,9 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import FileInput from "../common/fileinput/FileInput";
 import axiosI from "../../redux/axios";
+import { AiOutlineFileImage } from "react-icons/ai";
 import Joi from "joi";
 
 const CompleteQuest = () => {
@@ -10,7 +12,7 @@ const CompleteQuest = () => {
     title: "",
     description: "",
     details: "",
-    // demonstration:"",
+    demonstration: "",
     points: "",
   });
 
@@ -22,6 +24,10 @@ const CompleteQuest = () => {
   //   const { blogs } = useSelector((state) => state.blog);
   const history = useNavigate();
   //   console.log("Blogul este" + blogs.title, blogs.desc);
+
+  const handleInput = (name, value) => {
+    setData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const getAllBadges = async () => {
     try {
@@ -40,10 +46,6 @@ const CompleteQuest = () => {
 
   const handleInputState = (e) => {
     setData((data) => ({ ...data, [e.target.name]: e.target.value }));
-  };
-
-  const handleInput = (name, value) => {
-    setData((prev) => ({ ...prev, [name]: value }));
   };
 
   //   const schema = {
@@ -120,6 +122,17 @@ const CompleteQuest = () => {
               className="block resize-y py-3 px-2 text-sm w-full h-[200px] my-2 text-black bg-transparent border-[1px] border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
               required={true}
             />
+            <div className="w-full flex justify-start items-start">
+              <FileInput
+                label="Alege Demonstratia (*.pdf, *.png)"
+                icon={<AiOutlineFileImage />}
+                type="demonstration"
+                name="demonstration"
+                value={data.demonstration}
+                className="my-4"
+                handleInputState={handleInput}
+              />
+            </div>
             <div className="flex justify-start w-full pt-3">
               <button
                 type="submit"

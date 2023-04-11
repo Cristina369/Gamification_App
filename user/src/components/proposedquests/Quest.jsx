@@ -17,7 +17,7 @@ function Quest({ quest }) {
     e.preventDefault();
     if (Object.keys(errors).length === 0) {
       try {
-        const url = process.env.REACT_APP_API_URL + `/quests/accept/d${id}`;
+        const url = process.env.REACT_APP_API_URL + `/quests/accept/${id}`;
         await axiosI.put(url, data);
         alert("Blog acceptat cu succes");
         history("/blogs");

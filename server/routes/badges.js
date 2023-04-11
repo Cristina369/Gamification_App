@@ -66,6 +66,17 @@ router.get("/specific", auth, async (req, res) => {
   res.status(200).send({ data: badges });
 });
 
+// get user's badge LLLL
+// router.get("/max", auth, async (req, res) => {
+//   const user = await User.findById(req.user._id);
+//   const badges = await Badge.find({ _id: user.badges });
+//   if (!badges) return res.status(404).send("Can't find badges");
+//   else if (badges) {
+//     return res.status(404).send("Data" + Math.max(user.badges.points));
+//   }
+//   res.status(200).send({ data: Math.max(badges.points) });
+// });
+
 // get user's badges lenght
 router.get("/specific-l", auth, async (req, res) => {
   const user = await User.findById(req.user._id);
@@ -74,11 +85,11 @@ router.get("/specific-l", auth, async (req, res) => {
   res.status(200).send({ data: badges });
 });
 
-router.get("/specific/:id", auth, async (req, res) => {
+router.get("/specific/:id", async (req, res) => {
   const badge = await Badge.findById(req.params.id);
   if (!badge) return res.status(404).send("Can't find badges");
 
-  res.status(200).send({ data: quest });
+  res.status(200).send({ data: badge });
 });
 
 // Actualizare bloguri pentru admin :: trebuie de schimbat ca acum merge doar pentru clienti

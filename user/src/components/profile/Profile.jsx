@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { updateUser } from "../../redux/user/api";
 import { Link } from "react-router-dom";
 import { FiEdit } from "react-icons/fi";
+import Badge from "./Badge";
 import Chart from "./../leaderboard/Chart";
 import Image from "./../../images/profile.jpg";
 import Joi from "joi";
@@ -66,7 +67,7 @@ const Profile = () => {
       <div className="px-48 py-10">
         <div className="flex flex-row gap-5 mobile:flex-col tablet:flex-row">
           <div className="bg-white shadow-2xl p-10 w-5/12 flex flex-col justify-center items-center">
-            <div className="absolute top-[120px] left-[555px]">
+            <div className="absolute top-[120px] left-[530px]">
               <button>
                 <Link to="/edit-profile">
                   <FiEdit size={24} className="icon-profile-edit" />
@@ -76,9 +77,10 @@ const Profile = () => {
             <div>
               <img
                 className="object-cover rounded-full w-40 h-40"
-                src={Image}
+                src={data.image}
                 alt={"image" + data.firstName + data.lastName}
               />
+              <Badge badges={data.badges} />
             </div>
             <h1 className="text-black text-3xl font-thin flex flex-row gap-2 pt-5">
               {data.firstName} {data.lastName}
@@ -87,7 +89,7 @@ const Profile = () => {
               {data.position}
             </h1>
           </div>
-          <div className="bg-white shadow-2xl w-7/12 flex justify-center">
+          <div className="bg-white shadow-2xl w-8/12 flex justify-center">
             <ul className="flex flex-col gap-4 justify-center p-4 w-10/12">
               <li className="flex flex-row justify-between items-center border-b-[1px] border-gray-200 ">
                 <h1 className="text-black font-normal text-2xl pr-4">
@@ -133,13 +135,13 @@ const Profile = () => {
             <li className="flex flex-row justify-between">
               <h1 className="text-black font-normal text-xl">Badges </h1>
               <h1 className="text-gray-700 font-medium text-lg text-right">
-                {data.badges.length}
+                {data.badges ? data.badges.length : 0}
               </h1>
             </li>
             <li className="flex flex-row justify-between">
               <h1 className="text-black font-normal text-xl">Quests </h1>
               <h1 className="text-gray-700 font-medium text-lg text-right">
-                {data.quests.length}
+                {data.quests ? data.quests.length : 0}
               </h1>
             </li>
             <li className="flex flex-row justify-between">
@@ -147,12 +149,18 @@ const Profile = () => {
                 Proposed Quests{" "}
               </h1>
               <h1 className="text-gray-700 font-medium text-lg text-right">
-                {data.proposedQuests.length}
+                {data.proposedQuests ? data.proposedQuests.length : 0}
               </h1>
             </li>
           </ul>
-          <div className="bg-white shadow-2xl w-7/12 py-10 flex flex-col gap-4 justify-center items-center px-24">
-            <Chart />
+          <div className="bg-white shadow-2xl w-8/12 py-10 flex flex-col gap-4 justify-center items-center px-20">
+            <Chart
+              badges={data.badges.length}
+              quests={data.quests ? data.quests.length : 0}
+              proposedQuests={
+                data.proposedQuests ? data.proposedQuests.length : 0
+              }
+            />
           </div>
         </div>
       </div>

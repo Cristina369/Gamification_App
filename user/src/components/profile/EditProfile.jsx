@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import Image from "./../../images/profile.jpg";
+import FileInput from "../common/fileinput/FileInput";
+import { AiOutlineFileImage } from "react-icons/ai";
 import { updateUser } from "../../redux/user/api";
 import Joi from "joi";
 
@@ -11,13 +13,17 @@ const EditProfile = () => {
     firstName: "",
     lastName: "",
     position: "",
-    // image: "",
+    image: "",
     email: "",
     birthDate: "",
   });
   const { user, updateUserProgress } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const history = useNavigate();
+
+  const handleInput = (name, value) => {
+    setData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleInputState = (e) => {
     setData((data) => ({ ...data, [e.target.name]: e.target.value }));
@@ -42,7 +48,7 @@ const EditProfile = () => {
         firstName: user.firstName,
         lastName: user.lastName,
         email: user.email,
-        // image: user.image,
+        image: user.image,
         position: user.position,
         birthDate: user.birthDate,
       };
@@ -128,6 +134,17 @@ const EditProfile = () => {
               className="block py-3 px-2 text-sm w-full m-2 text-black bg-transparent border-[1px] border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
               required={true}
             />
+            <div className="w-full flex justify-start items-start">
+              <FileInput
+                label="Alege Imagine(*.png, *.jpg)"
+                icon={<AiOutlineFileImage />}
+                type="image"
+                name="image"
+                value={data.image}
+                className="my-4"
+                handleInputState={handleInput}
+              />
+            </div>
             <div className="flex justify-end w-full pt-3">
               <button
                 type="submit"

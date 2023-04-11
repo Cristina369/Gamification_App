@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import axiosI from "../../redux/axios";
 import Image from "./../../images/profile.jpg";
 import Leaders from "./Leaders";
+import Badge from "../profile/Badge";
 
 function Leaderboard() {
   const [users, setUsers] = useState([]);
@@ -46,9 +47,10 @@ function Leaderboard() {
                         <div class="flex-shrink-0">
                           <img
                             class="w-20 h-20 rounded-full object-cover"
-                            src={Image}
+                            src={user.image}
                             alt="Neil image"
                           />
+                          <Badge badges={data.badges} />
                         </div>
                         <div class="flex-1 min-w-0">
                           <p class="text-xl font-medium text-gray-900 truncate flex flex-row gap-2">

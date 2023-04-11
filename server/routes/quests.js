@@ -48,10 +48,15 @@ router.put("/accept/:id", [valid, auth], async (req, res) => {
   // const participant = user._id;
   if (!user._id.equals(quest.user)) {
     quest.participant = user._id;
+    quest.demonstration = "";
+    quest.details = "";
     user.quests.push(quest._id);
     resMessage = "Quest was accepted" + user._id + "||" + quest.user._id;
   } else {
-    resMessage = "Error! You cannot choose a mission that you have created";
+    if (error)
+      return res.status(400).send({
+        message: "Error! You cannot choose a mission that you have created",
+      });
   }
   quest.state = "accepted";
   await quest.save();
@@ -172,6 +177,7 @@ router.put("/complete/:id", auth, async (req, res) => {
   const schema = Joi.object({
     title: Joi.string().required(),
     description: Joi.string().allow(""),
+    demonstration: Joi.string().allow(""),
     details: Joi.string().allow(""),
     points: Joi.string().allow(""),
   });
@@ -189,6 +195,7 @@ router.put("/complete/:id", auth, async (req, res) => {
 
   quest.title = req.body.title;
   quest.description = req.body.description;
+  quest.demonstration = req.body.demonstration;
   quest.details = req.body.details;
   quest.points = req.body.points;
   quest.state = "completed";

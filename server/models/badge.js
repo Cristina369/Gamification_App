@@ -8,6 +8,7 @@ const badgeSchema = new mongoose.Schema({
   description: { type: String, required: true },
   users: { type: [ObjectId], default: [] },
   points: { type: String, default: "0" },
+  image: { type: String, required: true },
 });
 
 const validate = (badge) => {
@@ -16,6 +17,7 @@ const validate = (badge) => {
     title: Joi.string().required(),
     description: Joi.string().allow(""),
     points: Joi.string().allow(""),
+    image: Joi.string().allow(""),
   });
   return schema.validate(badge);
 };

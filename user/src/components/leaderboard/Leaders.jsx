@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axiosI from "../../redux/axios";
 import Image from "./../../images/profile.jpg";
+import Badge from "../profile/Badge";
 
 const Leaders = () => {
   const [users, setUsers] = useState([]);
@@ -48,9 +49,10 @@ const Leaders = () => {
                   <div class="flex-shrink-0">
                     <img
                       class="w-20 h-20 rounded-full object-cover"
-                      src={Image}
+                      src={user.image}
                       alt="Neil image"
                     />
+                    <Badge badges={user.badges} />
                   </div>
                   <p class="font-normal text-gray-700">
                     {user.firstName}
