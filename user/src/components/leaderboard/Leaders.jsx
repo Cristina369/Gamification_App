@@ -33,8 +33,8 @@ const Leaders = () => {
                 to={`/users/${user._id}`}
                 className={` grid w-11/12 p-6 border border-gray-200 rounded-lg shadow hover:bg-blue-100 ${
                   index + 1 === 1
-                    ? "bg-blue-300 col-start-2 col-end-3  row-end-1 row-start-1 -mt-10 mb-10"
-                    : "bg-blue-200 col-start-auto col-end-auto row-end-1 row-start-1"
+                    ? "bg-white col-start-2 col-end-3  row-end-1 row-start-1 -mt-10 mb-10"
+                    : "bg-white col-start-auto col-end-auto row-end-1 row-start-1"
                 }`}
               >
                 <div
@@ -43,24 +43,31 @@ const Leaders = () => {
                     index + 1 === 1 ? "" : ""
                   }`}
                 >
-                  <h5 class="mb-2 text-4xl font-bold tracking-tight text-gray-900 ">
+                  <h5 class="text-8xl font-bold tracking-tight text-gray-700 -mt-16 mb-5 -ml-40">
                     {index + 1}
                   </h5>
-                  <div class="flex-shrink-0">
+                  <div className="flex flex-col">
                     <img
-                      class="w-20 h-20 rounded-full object-cover"
+                      className="w-40 h-40 rounded-full object-cover"
                       src={user.image}
                       alt="Neil image"
                     />
-                    <Badge badges={user.badges} size={5} />
+                    <div className="p-3  rounded-full w-16 h-16 -mt-10 bg-black flex justify-center items-center">
+                      <p class="font-2xl text-white font-semibold text-2xl">
+                        {user.points}
+                      </p>
+                    </div>
+                    {/* <Badge badges={user.badges} size={5} /> */}
                   </div>
-                  <p class="font-normal text-gray-700">
-                    {user.firstName}
-                    <span className="ml-[4px]">{user.lastName}</span>
-                  </p>
-                  <p class="font-normal text-gray-700 text-2xl">
-                    {user.points}
-                  </p>
+                  <div className="flex flex-col justify-center items-center">
+                    <p className="text-2xl text-gray-700 mt-5">
+                      {user.firstName}
+                      <span className="ml-[4px] text-2xl">{user.lastName}</span>
+                    </p>
+                    <span className="ml-[4px] text-lg text-gray-500">
+                      {user.position}
+                    </span>
+                  </div>
                 </div>
               </Link>
             ))}

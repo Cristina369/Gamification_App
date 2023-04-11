@@ -65,8 +65,8 @@ const Profile = () => {
   return (
     <section className="w-10/12 h-full absolute block right-0 pt-10 bg-white p-5">
       <div className="px-48 py-10">
-        <div className="flex flex-row gap-5 mobile:flex-col tablet:flex-row">
-          <div className="bg-white shadow-2xl p-10 w-5/12 flex flex-col justify-center items-center">
+        <div className="flex flex-row gap-5 mobile:flex-col tablet:flex-row bg-white shadow-lg px-6 py-10">
+          <div className="p-10 w-5/12 flex flex-col justify-center items-center">
             <div className="absolute top-[120px] left-[530px]">
               <button>
                 <Link to="/edit-profile">
@@ -80,7 +80,7 @@ const Profile = () => {
                 src={data.image}
                 alt={"image" + data.firstName + data.lastName}
               />
-              <Badge badges={data.badges} size={20} />
+              {/* <Badge badges={data.badges} size={20} /> */}
             </div>
             <h1 className="text-black text-3xl font-thin flex flex-row gap-2 pt-5">
               {data.firstName} {data.lastName}
@@ -89,7 +89,7 @@ const Profile = () => {
               {data.position}
             </h1>
           </div>
-          <div className="bg-white shadow-2xl w-8/12 flex justify-center">
+          <div className="bg-white w-8/12 flex justify-center">
             <ul className="flex flex-col gap-4 justify-center p-4 w-10/12">
               <li className="flex flex-row justify-between items-center border-b-[1px] border-gray-200 ">
                 <h1 className="text-black font-normal text-2xl pr-4">
@@ -124,7 +124,7 @@ const Profile = () => {
             </ul>
           </div>
         </div>
-        <div className="flex flex-row gap-5 mt-3">
+        <div className="flex flex-row gap-5 mt-3 h-[22vw]">
           <ul className="bg-white shadow-2xl py-10 w-5/12 flex flex-col justify-center px-20">
             <li className="flex flex-row justify-between">
               <h1 className="text-black font-normal text-xl">Points </h1>

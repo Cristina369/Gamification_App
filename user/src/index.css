@@ -19,7 +19,10 @@
 }
 
 .icon-profile-edit {
-  @apply stroke-slate-500;
+  @apply stroke-slate-300;
+}
+.badge svg {
+  @apply w-16;
 }
 
 @layer base {

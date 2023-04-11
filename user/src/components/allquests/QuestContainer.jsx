@@ -14,24 +14,28 @@ const QuestContainer = ({ quests }) => {
     window.location.reload();
   };
   return (
-    <section className=" w-12/12 px-28 py-10 bg-white">
-      <h1 className="text-black font-normal text-2xl mb-7 pb-4 border-gray-100 border-b-[2px]">
-        All Quests
-      </h1>
-      <div className=" bg-white flex flex-col justify-center w-full gap-4">
+    <section className=" w-12/12 px-28">
+      <h1 className="text-black font-normal text-4xl ">All Quests</h1>
+      <div className="flex flex-col justify-center w-full gap- m-10">
         {quests.map((quest, index) => (
-          // <Quest quest={quest} />
           <div
             key={index}
-            className="border-b-[2px] border-gray-100 flex flex-row items-center justify-between px-16 py-7"
+            className="bg-white shadow-lg flex flex-row items-center justify-between px-16 py-10 my-5 rounded-lg"
           >
-            <h1 className="text-black font-normal text-xl w-[250px]">
-              {quest.title}
-            </h1>
-            <h1 className="text-black font-normal text-xl">
-              {quest.description ? quest.description.substring(0, 15) : ""}...
-            </h1>
-            <h1 className="text-black font-normal text-xl">{quest.points}</h1>
+            <div className="px-9 py-4 border-[1px] border-gray-500 rounded-xl">
+              <h1 className="text-black font-normal text-3xl flex flex-col justify-center">
+                {quest.points}
+              </h1>
+              <h1 className="text-gray-700 font-normal text-base">puncte</h1>
+            </div>
+            <div className="flex flex-col">
+              <h1 className="text-black font-normal text-2xl mb-2">
+                {quest.title}
+              </h1>
+              <h1 className="text-black font-normal text-base">
+                {quest.description ? quest.description.substring(0, 30) : ""}...
+              </h1>
+            </div>
             <div>
               <button
                 onClick={() => handleAccept(quest._id)}
