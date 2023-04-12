@@ -60,7 +60,7 @@ const SignUp = () => {
 
   return (
     <>
-      <section className="mobile:mt-16 mobile:pt-4 tablet:mt-32 tablet:pt-16 z-0 flex justify-center items-center">
+      <section className=" z-0 flex justify-center items-center mt-8">
         <div className="profil-container p-20  shadow-2xl flex flex-col items-center mobile:p-5 tablet:p-10 desktop:p-20 mobile:flex-col tablet:flex-col mobile:w-11/12 tablet:w-5/12">
           <h1 className="text-black font-light desktop:text-4xl text-center pb-10 mobile:text-2xl tablet:text-4xl">
             Sign Up
@@ -154,7 +154,7 @@ const SignUp = () => {
             </div>
             <h1 className="mt-10 text-xl font-medium text-center">
               You already have an account?
-              <Link to="/login">
+              <Link to="/">
                 <span className="text-2xl font-medium pl-2">Login</span>
               </Link>
             </h1>

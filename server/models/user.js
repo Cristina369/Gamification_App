@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema({
     ref: "badge",
     default: "6431389354823da0f51247c2",
   },
-  quests: { type: [String], default: [] }, //quests accepted or completed
+  quests: { type: [String], default: [] },
   aprecietedQuest: { type: [String], default: [] },
   proposedQuests: { type: [String], default: [] },
   admin: { type: Boolean, default: false },

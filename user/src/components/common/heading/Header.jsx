@@ -29,7 +29,7 @@ const Header = () => {
 
   const handleLogout = () => {
     dispatch(logout());
-    window.location = "/login";
+    window.location = "/";
   };
 
   return (
