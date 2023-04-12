@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axiosI from "../../redux/axios";
-import Image from "./../../images/profile.jpg";
+import Image from "./../../images/avatar-default-svgrepo-com.svg";
 import Leaders from "./Leaders";
 import Badge from "../profile/Badge";
 
@@ -48,7 +48,7 @@ function Leaderboard() {
                           <div className="flex flex-col">
                             <img
                               className="w-28 h-28 rounded-full object-cover"
-                              src={user.image}
+                              src={user.image ? user.image : Image}
                               alt="Neil image"
                             />
                             <Badge

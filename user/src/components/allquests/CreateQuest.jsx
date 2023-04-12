@@ -56,9 +56,9 @@ const CreateQuest = () => {
 
   return (
     <>
-      <section className="w-10/12 h-full absolute block right-0 top-14 bg-white py-20">
-        <div className="w-full profil-container  shadow-2xl flex flex-col items-center justify-center mobile:p-5 tablet:p-10 desktop:p-20 mobile:flex-col tablet:flex-col mobile:w-11/12 tablet:w-10/12 profile">
-          <h1 className="text-black font-light desktop:text-6xl text-center pb-10 mobile:text-2xl tablet:text-4xl">
+      <section className="w-10/12 h-full absolute  right-0 top-14 bg-white py-32 flex justify-center">
+        <div className="w-full profil-container  shadow-2xl flex flex-col items-center justify-center mobile:p-5 tablet:p-10 desktop:p-20 mobile:flex-col tablet:flex-col mobile:w-11/12 tablet:w-8/12 profile">
+          <h1 className="text-white font-light desktop:text-6xl text-center pb-10 mobile:text-2xl tablet:text-4xl">
             Add Quest
           </h1>
           <form
@@ -99,7 +99,7 @@ const CreateQuest = () => {
             <div className="w-full flex justify-end items-end">
               <button
                 type="submit"
-                className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-3xl"
+                className="bg-transparent border-[2px] border-white text-white px-6 py-3 rounded-3xl mt-7"
               >
                 Add quest
               </button>

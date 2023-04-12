@@ -9,6 +9,7 @@ const SignUp = () => {
   const [data, setData] = useState({
     firstName: "",
     lastName: "",
+    position: "",
     password: "",
     email: "",
     birthDate: "",
@@ -27,6 +28,7 @@ const SignUp = () => {
     password: passwordComplexity().required().label("Password"),
     firstName: Joi.string().min(5).max(10).required().label("Name"),
     lastName: Joi.string().min(5).max(10).required().label("Name"),
+    firstName: Joi.string().min(5).max(20).required().label("Position"),
   };
 
   const handleSubmit = async (e) => {
@@ -37,7 +39,8 @@ const SignUp = () => {
         const url = process.env.REACT_APP_API_URL + "/users";
         await axios.post(url, data);
         alert("Cont creat cu succes");
-        history.push("/login");
+        // history.push("/login");
+        window.location = "/login";
       } catch (error) {
         if (
           error.response &&
@@ -47,7 +50,7 @@ const SignUp = () => {
           alert(error.response.data);
         } else {
           console.log(error);
-          alert("Ceva a mers gresit!");
+          history.push("/login");
         }
       }
     } else {
@@ -84,6 +87,19 @@ const SignUp = () => {
                 value={data.lastName}
                 className="block py-3 px-2 text-sm w-full my-3 text-black bg-transparent border-[1px] border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
                 error={errors.lastName}
+                required={true}
+              />
+            </div>
+            <div>
+              <input
+                label="Position"
+                placeholder="Position"
+                name="position"
+                onChange={handleInputState}
+                schema={schema.position}
+                value={data.position}
+                className="block py-3 px-2 text-sm w-full my-3 text-black bg-transparent border-[1px] border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
+                error={errors.position}
                 required={true}
               />
             </div>

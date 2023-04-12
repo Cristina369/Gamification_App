@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { FiEdit } from "react-icons/fi";
 import Badge from "./Badge";
 import Chart from "./../leaderboard/Chart";
-import Image from "./../../images/profile.jpg";
+import Image from "./../../images/avatar-default-svgrepo-com.svg";
 import Joi from "joi";
 
 const Profile = () => {
@@ -77,7 +77,7 @@ const Profile = () => {
             <div className="flex flex-col">
               <img
                 className="object-cover rounded-full w-48 h-48"
-                src={data.image}
+                src={data.image ? data.image : Image}
                 alt={"image" + data.firstName + data.lastName}
               />
               {/* <Badge badges={data.badges} size={20} /> */}

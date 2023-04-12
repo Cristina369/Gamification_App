@@ -42,7 +42,7 @@ const Head = () => {
             <Link
               to="/"
               onClick={() => setOpen(!open)}
-              className="desktop:text-4xl desktop:font-normal tablet:text-3xl mobile:text-3xl "
+              className="desktop:text-4xl desktop:font-normal tablet:text-3xl mobile:text-3xl logo"
             >
               BLUE
             </Link>
@@ -59,22 +59,22 @@ const Head = () => {
             }`}
           >
             <li className="nav-link">
-              <Link to="/" onClick={() => setOpen(!open)}>
+              <Link to="#" onClick={() => setOpen(!open)}>
                 Home
               </Link>
             </li>
             <li className="nav-link">
-              <Link to="/about" onClick={() => setOpen(!open)}>
+              <Link to="#" onClick={() => setOpen(!open)}>
                 Leaderboard
               </Link>
             </li>
             <li className="nav-link">
-              <Link to="/all-blogs" onClick={() => setOpen(!open)}>
+              <Link to="#" onClick={() => setOpen(!open)}>
                 Instructions
               </Link>
             </li>
             <li className="nav-link">
-              <Link to="/contact" onClick={() => setOpen(!open)}>
+              <Link to="#" onClick={() => setOpen(!open)}>
                 Contact
               </Link>
             </li>

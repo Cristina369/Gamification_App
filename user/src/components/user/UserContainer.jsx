@@ -136,7 +136,7 @@ const UserContainer = () => {
           </ul>
           <div className="bg-white shadow-2xl w-8/12 py-10 flex flex-col gap-4 justify-center items-center px-20 border-[1px] border-primary">
             <Chart
-              badges={data.badges.length}
+              badges={data.badges ? data.badges.length : 0}
               quests={data.quests ? data.quests.length : 0}
               proposedQuests={
                 data.proposedQuests ? data.proposedQuests.length : 0

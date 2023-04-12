@@ -55,7 +55,7 @@ router.put("/accept/:id", [valid, auth], async (req, res) => {
     quest.demonstration = "";
     quest.details = "";
     user.quests.push(quest._id);
-    resMessage = "Quest was accepted" + user._id + "||" + quest.user._id;
+    resMessage = "Quest was accepted";
   } else {
     if (error)
       return res.status(400).send({

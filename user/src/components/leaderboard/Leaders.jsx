@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axiosI from "../../redux/axios";
-import Image from "./../../images/profile.jpg";
+import Image from "./../../images/avatar-default-svgrepo-com.svg";
 import Badge from "../profile/Badge";
 
 const Leaders = () => {
@@ -12,7 +12,7 @@ const Leaders = () => {
     try {
       const url = process.env.REACT_APP_API_URL + "/users/";
       const { data } = await axiosI.get(url);
-      const array1 = data.data.splice(0, 10);
+      const array1 = data.data.splice(0, 3);
       setUsers(array1);
     } catch (error) {
       console.log(error);
@@ -49,7 +49,7 @@ const Leaders = () => {
                   <div className="flex flex-col">
                     <img
                       className="w-40 h-40 rounded-full object-cover"
-                      src={user.image}
+                      src={user.image ? user.image : Image}
                       alt="Neil image"
                     />
                     <div className="p-3  rounded-full w-16 h-16 -mt-10 bg-primary flex justify-center items-center">

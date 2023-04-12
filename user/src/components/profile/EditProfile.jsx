@@ -39,7 +39,7 @@ const EditProfile = () => {
     e.preventDefault();
     const payload = { data, id: user._id };
     const res = await updateUser(payload, dispatch);
-    res && history("/panel");
+    res && history("/profile");
   };
 
   useEffect(() => {
@@ -57,8 +57,8 @@ const EditProfile = () => {
   }, [user]);
 
   return (
-    <section className="w-10/12 h-fit absolute block right-0 bg-white px-5">
-      <div className="flex flex-col justify-center items-center ">
+    <section className="w-10/12 h-fit absolute flex justify-center items-center right-0 bg-white px-5">
+      <div className="flex flex-col justify-center items-center w-full pt-24">
         <form
           onSubmit={handleSubmit}
           className="flex flex-row w-10/12 justify-center items-center p-10 gap-7 "
