@@ -11,7 +11,6 @@ router.post("/", [auth, admin], async (req, res) => {
   const { error } = validate(req.body);
   if (error) res.status(400).send({ message: error.details[0].message });
 
-  //   const badge = await Badge({ ...req.body }).save();
   let newBadge = await new Badge({
     ...req.body,
   }).save();

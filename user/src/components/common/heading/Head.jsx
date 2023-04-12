@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getUser } from "../../../redux/user/api";
-// import { getBlog } from "../../../redux/blog/api";
 import { AiOutlineMenu } from "react-icons/ai";
 import { logout } from "../../../redux/auth";
 
@@ -11,7 +10,6 @@ const Head = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState(false);
 
   useEffect(() => {
     let token = null;
@@ -25,14 +23,8 @@ const Head = () => {
 
     if (user && token) {
       getUser(user._id, dispatch);
-      // getBlog(dispatch);
     }
   }, [dispatch, user]);
-
-  const handleLogout = () => {
-    dispatch(logout());
-    window.location = "/login";
-  };
 
   return (
     <>

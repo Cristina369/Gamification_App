@@ -80,7 +80,6 @@ router.put("/complete/:id", auth, async (req, res) => {
 
   user.points = +user.points + +quest.points;
 
-  // if(user.points)
   await quest.save();
   await user.save();
 

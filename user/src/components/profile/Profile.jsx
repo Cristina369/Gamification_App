@@ -23,26 +23,9 @@ const Profile = () => {
     quests: "",
     proposedQuests: "",
   });
-  const { user, updateUserProgress } = useSelector((state) => state.user);
+  const { user } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const history = useNavigate();
-
-  const handleInputState = (e) => {
-    setData((data) => ({ ...data, [e.target.name]: e.target.value }));
-  };
-
-  const schema = {
-    email: Joi.string().email({ tlds: false }).required().label("Email"),
-    firstName: Joi.string().min(5).max(10).required().label("Name"),
-    lastName: Joi.string().min(5).max(10).required().label("Name"),
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const payload = { data, id: user._id };
-    const res = await updateUser(payload, dispatch);
-    res && history("/acasa");
-  };
 
   useEffect(() => {
     if (user) {
@@ -80,7 +63,6 @@ const Profile = () => {
                 src={data.image ? data.image : Image}
                 alt={"image" + data.firstName + data.lastName}
               />
-              {/* <Badge badges={data.badges} size={20} /> */}
             </div>
             <h1 className="text-white text-3xl font-bold flex flex-row gap-2 pt-5">
               {data.firstName} {data.lastName}

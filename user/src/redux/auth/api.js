@@ -12,7 +12,7 @@ export const auth = async (payload, dispatch) => {
 
     const decodeData = jwt_decode(data.data);
     dispatch(authSuccess({ ...decodeData, token: data.data }));
-    // alert(data.message);
+    alert(data.message);
     window.location = "/profile";
     return true;
   } catch (error) {
@@ -22,10 +22,10 @@ export const auth = async (payload, dispatch) => {
       error.response.status >= 400 &&
       error.response.status < 500
     ) {
-      // alert(error.response.data.message);
+      alert(error.response.data.message);
     } else {
       console.log(error);
-      // alert("Something went wrong!");
+      alert("Something went wrong!");
     }
     return false;
   }

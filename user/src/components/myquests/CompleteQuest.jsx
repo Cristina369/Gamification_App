@@ -16,14 +16,12 @@ const CompleteQuest = () => {
     points: "",
   });
 
-  const [errors, setErrors] = useState({});
+  const [errors] = useState({});
   const [quests, setQuests] = useState([]);
 
   const { id } = useParams();
   console.log("Id-ul este : " + id);
-  //   const { blogs } = useSelector((state) => state.blog);
   const history = useNavigate();
-  //   console.log("Blogul este" + blogs.title, blogs.desc);
 
   const handleInput = (name, value) => {
     setData((prev) => ({ ...prev, [name]: value }));
@@ -48,13 +46,6 @@ const CompleteQuest = () => {
     setData((data) => ({ ...data, [e.target.name]: e.target.value }));
   };
 
-  //   const schema = {
-  //     title: Joi.string().min(5).max(60).required().label("Title"),
-  //     description: Joi.string().min(5).max(60).required().label("Content"),
-  //     points: Joi.string().min(5).max(200).required().label("Description"),
-  //     img: Joi.required().label("Image"),
-  //   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (Object.keys(errors).length === 0) {
@@ -69,10 +60,10 @@ const CompleteQuest = () => {
           error.response.status >= 400 &&
           error.response.status < 500
         ) {
-          // alert(error.response.data);
+          alert(error.response.data);
         } else {
           console.log(error);
-          // alert("Ceva a mers gresit!");
+          alert("Ceva a mers gresit!");
         }
       }
     } else {
@@ -103,18 +94,6 @@ const CompleteQuest = () => {
           onSubmit={handleSubmit}
           className="w-/12/12 flex flex-row justify-center w-full mobile:flex-col-reverse tablet:flex-row"
         >
-          {/* <div className="flex flex-row justify-center items-center w-6/12">
-            <div className="flex flex-row justify-center items-center w-full gap-5">
-              <div> */}
-          {/* <h1 className="text-black text-2xl font-thin mt-3">
-                  {data.title}
-                </h1>{" "}
-                <h1 className="text-black text-2xl font-thin mt-3">
-                  {data.description}
-                </h1>{" "}
-                <h1 className="text-black text-2xl font-thin mt-3">
-                  {data.points}
-                </h1> */}
           <div className="flex justify-center flex-col w-12/12">
             <ul className=" w-12/12 flex flex-col gap-4 justify-center mb-6">
               <li className="flex flex-row justify-between border-b-[1px] border-white ">
@@ -138,9 +117,6 @@ const CompleteQuest = () => {
                 </h1>
               </li>
             </ul>
-            {/* </div>
-              </div>
-            </div> */}
 
             <div className="flex flex-col w-12/12">
               <textarea
@@ -174,9 +150,6 @@ const CompleteQuest = () => {
               </button>
             </div>
           </div>
-          {/* <div className="tablet:w-6/12 mx-5 flex flex-col justify-start items-center mobile:w-10/12 mobile:pb-5 tablet:pb-0 ">
-            <img src={data.img} className="w-full tablet:-mt-20 mobile:mt-0" />
-          </div> */}
         </form>
       </div>
     </section>

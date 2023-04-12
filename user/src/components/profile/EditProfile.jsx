@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import Image from "./../../images/profile.jpg";
 import FileInput from "../common/fileinput/FileInput";
 import { AiOutlineFileImage } from "react-icons/ai";
 import { updateUser } from "../../redux/user/api";
@@ -17,7 +16,7 @@ const EditProfile = () => {
     email: "",
     birthDate: "",
   });
-  const { user, updateUserProgress } = useSelector((state) => state.user);
+  const { user } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const history = useNavigate();
 

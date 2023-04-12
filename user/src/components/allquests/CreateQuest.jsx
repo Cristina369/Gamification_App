@@ -10,7 +10,7 @@ const CreateQuest = () => {
     points: "",
   });
 
-  const [errors, setErrors] = useState({});
+  const [errors] = useState({});
 
   const history = useNavigate();
 
@@ -19,15 +19,6 @@ const CreateQuest = () => {
     const name = e.target.name;
     setData((data) => ({ ...data, [name]: value }));
   };
-
-  const handleInput = (name, value) => {
-    setData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  // const schema = {
-  //   title: Joi.string().email({ tlds: false }).required().label("Title"),
-  //   desc: passwordComplexity().required().label("Description"),
-  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();

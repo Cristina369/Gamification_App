@@ -39,7 +39,6 @@ const SignUp = () => {
         const url = process.env.REACT_APP_API_URL + "/users";
         await axios.post(url, data);
         alert("Cont creat cu succes");
-        // history.push("/login");
         window.location = "/login";
       } catch (error) {
         if (

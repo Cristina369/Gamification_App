@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { updateUser } from "../../redux/user/api";
 import AllQuestsPanel from "../allquests/AllQuestsPanel";
-import Chart from "./../leaderboard/Chart";
 import Joi from "joi";
 import { logout } from "../../redux/auth";
 
@@ -21,26 +20,7 @@ const Panel = () => {
     quests: "",
     proposedQuests: "",
   });
-  const { user, updateUserProgress } = useSelector((state) => state.user);
-  const dispatch = useDispatch();
-  const history = useNavigate();
-
-  const handleInputState = (e) => {
-    setData((data) => ({ ...data, [e.target.name]: e.target.value }));
-  };
-
-  const schema = {
-    email: Joi.string().email({ tlds: false }).required().label("Email"),
-    firstName: Joi.string().min(5).max(10).required().label("Name"),
-    lastName: Joi.string().min(5).max(10).required().label("Name"),
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const payload = { data, id: user._id };
-    const res = await updateUser(payload, dispatch);
-    res && history("/acasa");
-  };
+  const { user } = useSelector((state) => state.user);
 
   useEffect(() => {
     if (user) {
@@ -59,11 +39,6 @@ const Panel = () => {
       setData(dk);
     }
   }, [user]);
-
-  const handleLogout = () => {
-    dispatch(logout());
-    window.location = "/login";
-  };
 
   return (
     <section className="w-10/12 h-full absolute block right-0  bg-white p-10">

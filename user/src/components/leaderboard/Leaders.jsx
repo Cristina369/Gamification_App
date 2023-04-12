@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axiosI from "../../redux/axios";
 import Image from "./../../images/avatar-default-svgrepo-com.svg";
-import Badge from "../profile/Badge";
 
 const Leaders = () => {
   const [users, setUsers] = useState([]);
@@ -57,7 +56,6 @@ const Leaders = () => {
                         {user.points}
                       </p>
                     </div>
-                    {/* <Badge badges={user.badges} size={5} /> */}
                   </div>
                   <div className="flex flex-col justify-center items-center">
                     <p className="text-2xl text-gray-700 mt-5">

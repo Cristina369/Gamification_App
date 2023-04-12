@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { acceptQuest } from "../../redux/blog/api";
-// import Quest from "./Quest";
 
 const QuestContainer = ({ quests }) => {
   const dispatch = useDispatch();
-  // const [setLoading] = useState(true);
-
-  // setTimeout(() => setLoading(false), 4000);
 
   const handleAccept = (id) => {
     acceptQuest(id, dispatch);

@@ -4,14 +4,8 @@ import Joi from "joi";
 
 function Quest({ quest }) {
   const id = quest._id;
-  const [errors, setErrors] = useState({});
-  const [data, setActive] = useState(false);
-
-  const handleInputState = (e) => {
-    const value = e.target.value;
-    const name = e.target.name;
-    setData((data) => ({ ...data, [name]: value }));
-  };
+  const [errors] = useState({});
+  const [data] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

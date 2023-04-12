@@ -6,7 +6,6 @@ const connection = require("./db");
 const userR = require("./routes/users");
 const questsR = require("./routes/quests");
 const badgesR = require("./routes/badges");
-// const searchR = require("./routes/search");
 const authR = require("./routes/auth");
 
 const app = express();
@@ -19,7 +18,6 @@ app.use("/api/users/", userR);
 app.use("/api/auth/", authR);
 app.use("/api/quests/", questsR);
 app.use("/api/badges/", badgesR);
-// app.use("/api/", searchR);
 
 const port = process.env.PORT || 8080;
 app.listen(port, () => console.log(`Server running on port ${port}...`));

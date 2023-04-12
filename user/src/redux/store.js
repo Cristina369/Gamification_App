@@ -4,12 +4,10 @@ import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
 import authR from "./auth";
-// import blogR from "./blog";
 import userR from "./user";
 
 const reducers = combineReducers({
   auth: authR,
-  // blog: blogR,
   user: userR,
 });
 

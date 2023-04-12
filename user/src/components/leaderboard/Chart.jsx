@@ -22,26 +22,7 @@ function Chart({ badges, quests, proposedQuests }) {
     quests: "",
     proposedQuests: "",
   });
-  const { user, updateUserProgress } = useSelector((state) => state.user);
-  const dispatch = useDispatch();
-  const history = useNavigate();
-
-  const handleInputState = (e) => {
-    setData((data) => ({ ...data, [e.target.name]: e.target.value }));
-  };
-
-  const schema = {
-    email: Joi.string().email({ tlds: false }).required().label("Email"),
-    firstName: Joi.string().min(5).max(10).required().label("Name"),
-    lastName: Joi.string().min(5).max(10).required().label("Name"),
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const payload = { data, id: user._id };
-    const res = await updateUser(payload, dispatch);
-    res && history("/acasa");
-  };
+  const { user } = useSelector((state) => state.user);
 
   useEffect(() => {
     if (user) {

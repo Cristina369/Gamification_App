@@ -2,10 +2,6 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axiosI from "../../redux/axios";
-// import LBlogs from "./LBlogs";
-// import Blogs from "./Blogs";
-// import AllBlogsC from "../allblogs/AllBlogsC";
-// import ContactInfo from "../contact/ContactInfo";
 
 const Home = () => {
   const [users, setUsers] = useState([]);
@@ -53,7 +49,6 @@ const Home = () => {
                   <div className="flex flex-row justify-center items-center mt-10">
                     <h1>{user.points}</h1>
                   </div>
-                  {/* <h2>{blog.content ? blog.content.substring(0, 165) : ""}...</h2> */}
                   <button className="mt-5 border border-gray-200 px-3 py-2 font-extrabold"></button>
                 </div>
               </Link>

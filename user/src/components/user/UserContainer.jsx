@@ -1,15 +1,11 @@
 import React from "react";
-// import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axiosI from "../../redux/axios";
 import Chart from "./../leaderboard/Chart";
-import Badge from "../profile/Badge";
-// import Badge from "../user/Badge";
 
 const UserContainer = () => {
   const [data, setData] = useState([]);
-  //   const { users } = useSelector((state) => state.user);
 
   const { id } = useParams();
   console.log("ID-ul AICI" + id);
@@ -51,7 +47,6 @@ const UserContainer = () => {
     }
   }, [id, users]);
 
-  //   console.log("Blogurile sunt" + blogs.title);
   return (
     <section className="w-10/12 h-fit absolute block right-0 pt-10 bg-white p-5">
       <div className="px-48 py-10">
@@ -63,7 +58,6 @@ const UserContainer = () => {
                 src={data.image}
                 alt={"image" + data.firstName + data.lastName}
               />
-              {/* <Badge badges={data.badges} size={20} /> */}
             </div>
             <h1 className="text-white text-3xl font-bold flex flex-row gap-2 pt-5">
               {data.firstName} {data.lastName}

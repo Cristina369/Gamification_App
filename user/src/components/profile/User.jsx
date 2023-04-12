@@ -1,13 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { updateUser } from "../../redux/user/api";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { FiEdit } from "react-icons/fi";
 import Chart from "./../leaderboard/Chart";
-import Image from "./../../images/profile.jpg";
-import Joi from "joi";
 
 const User = () => {
   const [data, setData] = useState({
@@ -22,26 +18,7 @@ const User = () => {
     quests: "",
     proposedQuests: "",
   });
-  const { user, updateUserProgress } = useSelector((state) => state.user);
-  const dispatch = useDispatch();
-  const history = useNavigate();
-
-  const handleInputState = (e) => {
-    setData((data) => ({ ...data, [e.target.name]: e.target.value }));
-  };
-
-  const schema = {
-    email: Joi.string().email({ tlds: false }).required().label("Email"),
-    firstName: Joi.string().min(5).max(10).required().label("Name"),
-    lastName: Joi.string().min(5).max(10).required().label("Name"),
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const payload = { data, id: user._id };
-    const res = await updateUser(payload, dispatch);
-    res && history("/acasa");
-  };
+  const { user } = useSelector((state) => state.user);
 
   useEffect(() => {
     if (user) {

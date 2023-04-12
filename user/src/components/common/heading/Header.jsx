@@ -23,7 +23,6 @@ const Header = () => {
 
     if (user && token) {
       getUser(user._id, dispatch);
-      // getBlog(dispatch);
     }
   }, [dispatch, user]);
 

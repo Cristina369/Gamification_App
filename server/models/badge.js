@@ -13,7 +13,6 @@ const badgeSchema = new mongoose.Schema({
 
 const validate = (badge) => {
   const schema = Joi.object({
-    // _id: Joi.string(),
     title: Joi.string().required(),
     description: Joi.string().allow(""),
     points: Joi.string().allow(""),
