@@ -7,13 +7,13 @@
   </h3>
  <br />
  
- ### Click here for live preview <a href="https://cristina369.github.io/react-photo-studio">Gamification app</a>
+ ### Click here for live preview <a href="https://github.com/Cristina369/Gamification_App/blob/3e9d49c47cc822d8c09c43bb4fe9118bf031ab48/user/src/images/Gamification.mp4">Gamification app</a>
 
 </p>
 
 ## Description
 
-![Home page](https://github.com/Cristina369/react-photo-studio/blob/5d04183c27e02c80ab71d67c498841c63bd37f6f/src/images/Art-Maison.png?raw=true "Art Maison home page")
+![Home page](https://github.com/Cristina369/Gamification_App/blob/3e9d49c47cc822d8c09c43bb4fe9118bf031ab48/user/src/images/Gamification.mp4?raw=true "Art Maison home page")
 
 #### Features
  
