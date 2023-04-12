@@ -13,7 +13,7 @@
 
 ## Description
 
-![Gamification App](https://user-images.githubusercontent.com/93976122/231408588-a1f561ec-cb89-4e3a-a677-9ffd8b4455ca.mp4)
+https://user-images.githubusercontent.com/93976122/231408588-a1f561ec-cb89-4e3a-a677-9ffd8b4455ca.mp4
 
 
 ### Funtionalities
