@@ -13,7 +13,7 @@
 
 ## Description
 
-![Home page](https://github.com/Cristina369/Gamification_App/blob/3e9d49c47cc822d8c09c43bb4fe9118bf031ab48/user/src/images/Gamification.mp4?raw=true "Art Maison home page")
+![Home page](https://github.com/Cristina369/Gamification_App/blob/3e9d49c47cc822d8c09c43bb4fe9118bf031ab48/user/src/images/Gamification.mp4)
 
 #### Features
  
