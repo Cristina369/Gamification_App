@@ -11,7 +11,7 @@
 
 </p>
 
-## Description
+## Demo
 
 https://user-images.githubusercontent.com/93976122/231408588-a1f561ec-cb89-4e3a-a677-9ffd8b4455ca.mp4
 
@@ -38,17 +38,3 @@ https://user-images.githubusercontent.com/93976122/231408588-a1f561ec-cb89-4e3a-
 - Express js
 - MongoDb
 
-
-# Getting Started
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-### To run project:-
-
-### `npm start`
-
-### To build project:-
-
-### `npm run build`
