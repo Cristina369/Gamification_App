@@ -7,33 +7,34 @@
   </h3>
  <br />
  
- ### Click here for live preview <a href="https://cristina369.github.io/react-photo-studio">Gamification app</a>
+ ### Click here to download the video in better quality <a href="https://github.com/Cristina369/Gamification_App/blob/3e9d49c47cc822d8c09c43bb4fe9118bf031ab48/user/src/images/Gamification.mp4">Gamification app</a>
 
 </p>
 
-## Description
+## Demo
 
-![Home page](https://github.com/Cristina369/react-photo-studio/blob/5d04183c27e02c80ab71d67c498841c63bd37f6f/src/images/Art-Maison.png?raw=true "Art Maison home page")
+https://user-images.githubusercontent.com/93976122/231408588-a1f561ec-cb89-4e3a-a677-9ffd8b4455ca.mp4
 
-#### Features
+
+### Funtionalities
  
- - Multi-Page Layout
- - Fully Responsive
- - React-CSS
- - Contact Form with EmailJS
+ User
+ 
+ - The guest users can view/read all quests
+ - The user can login/signup
+ - The user can add new quests if he has a score higher than 500
+ - The user can accept quest
+ - The user can complete a quest 
+ - The user can view the leaderboard
+ - The user can view the profiles of other users
+ - the user can get points and badges for his activity
  
 
+### Built With
+- React
+- Tailwind
+- Redux
+- Node js
+- Express js
+- MongoDb
 
-# Getting Started
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-### To run project:-
-
-### `npm start`
-
-### To build project:-
-
-### `npm run build`
