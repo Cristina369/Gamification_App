@@ -15,17 +15,6 @@ router.post("/", auth, async (req, res) => {
   const quest = await Quest({ ...req.body, user: user._id });
   const points = user.points;
 
-  // if (user.points > 500) {
-  //   user.proposedQuests.push(quest._id);
-  //   resMessage = "Quest was created" + user.points;
-  //   await quest.save();
-  //   await user.save();
-  // }
-  // if (user.points < 500) {
-  //   resMessage = "Error! You don't have enough points to create a quest";
-  // } else {
-  //   resMessage = "Error!";
-  // }
   user.proposedQuests.push(quest._id);
   resMessage = "Quest was created" + user.points;
   await quest.save();
@@ -41,15 +30,7 @@ router.put("/accept/:id", [valid, auth], async (req, res) => {
 
   const user = await User.findById(req.user._id);
   const index = user.quests.indexOf(quest._id);
-  // if (index === -1) {
-  //   user.quests.push(quest._id);
-  //   resMessage = "Quest was accepted";
-  // } else {
-  //   user.quests.splice(index, 1);
-  //   resMessage = "Quest was deleted from accepted quests";
-  // }
 
-  // const participant = user._id;
   if (!user._id.equals(quest.user)) {
     quest.participant = user._id;
     quest.demonstration = "";
@@ -67,6 +48,46 @@ router.put("/accept/:id", [valid, auth], async (req, res) => {
 
   await user.save();
   res.status(200).send({ data: quest, message: resMessage });
+});
+
+// edit quest :id, for client
+router.put("/complete/:id", auth, async (req, res) => {
+  const schema = Joi.object({
+    title: Joi.string().required(),
+    description: Joi.string().allow(""),
+    demonstration: Joi.string().allow(""),
+    details: Joi.string().allow(""),
+    points: Joi.string().allow(""),
+  });
+  const { error } = schema.validate(req.body);
+  if (error) return res.status(400).send({ message: error.details[0].message });
+
+  const quest = await Quest.findById(req.params.id);
+  if (!quest) return res.status(404).send({ message: "Can't find the quest!" });
+
+  const user = await User.findById(req.user._id);
+  // if (!user._id.equals(quest.participant))
+  //   return res
+  //     .status(403)
+  //     .send({ message: user.admin + "User does't have access to edit!" });
+
+  quest.title = req.body.title;
+  quest.description = req.body.description;
+  quest.demonstration = req.body.demonstration;
+  quest.details = req.body.details;
+  quest.points = req.body.points;
+  quest.state = "completed";
+
+  user.points = +user.points + +quest.points;
+
+  // if(user.points)
+  await quest.save();
+  await user.save();
+
+  res.status(200).send({
+    data: quest,
+    message: "Successfully updated quest!",
+  });
 });
 
 // get proposed quests
@@ -135,8 +156,7 @@ router.get("/specific/:id", auth, async (req, res) => {
   res.status(200).send({ data: quest });
 });
 
-// Actualizare bloguri pentru admin :: trebuie de schimbat ca acum merge doar pentru clienti
-//Update blogs, for admin app :: change for admin
+//Update quests, for admin app :: change for admin
 router.put("/:id", [valid, admin], async (req, res) => {
   const quest = await Quest.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
@@ -167,46 +187,6 @@ router.put("/edit/:id", auth, async (req, res) => {
   quest.title = req.body.title;
   quest.description = req.body.description;
   quest.points = req.body.points;
-  await quest.save();
-  await user.save();
-
-  res.status(200).send({
-    data: quest,
-    message: "Successfully updated quest!",
-  });
-});
-
-// edit quest :id, for client
-router.put("/complete/:id", auth, async (req, res) => {
-  const schema = Joi.object({
-    title: Joi.string().required(),
-    description: Joi.string().allow(""),
-    demonstration: Joi.string().allow(""),
-    details: Joi.string().allow(""),
-    points: Joi.string().allow(""),
-  });
-  const { error } = schema.validate(req.body);
-  if (error) return res.status(400).send({ message: error.details[0].message });
-
-  const quest = await Quest.findById(req.params.id);
-  if (!quest) return res.status(404).send({ message: "Can't find the quest!" });
-
-  const user = await User.findById(req.user._id);
-  // if (!user._id.equals(quest.participant))
-  //   return res
-  //     .status(403)
-  //     .send({ message: user.admin + "User does't have access to edit!" });
-
-  quest.title = req.body.title;
-  quest.description = req.body.description;
-  quest.demonstration = req.body.demonstration;
-  quest.details = req.body.details;
-  quest.points = req.body.points;
-  quest.state = "completed";
-
-  user.points = +user.points + +quest.points;
-
-  // if(user.points)
   await quest.save();
   await user.save();
 
