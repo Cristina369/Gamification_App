@@ -21,7 +21,7 @@ const Instructions = () => {
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Provident totam quasi vel rem illo accusamus voluptatem, optio eos
               tempora eum repellat, incidunt exercitationem nostrum nihil, ut
-              officiis ex qui eligendi.
+              officiis ex qui eligendi.Sit deleniti reprehenderit autem tempora.
             </p>
           </a>
         </div>

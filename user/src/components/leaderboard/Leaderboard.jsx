@@ -13,7 +13,7 @@ function Leaderboard() {
     try {
       const url = process.env.REACT_APP_API_URL + "/users/";
       const { data } = await axiosI.get(url);
-      const array1 = data.data.splice(0, 10);
+      const array1 = data.data.splice(0, 20);
       setUsers(array1);
     } catch (error) {
       console.log(error);
@@ -38,7 +38,7 @@ function Leaderboard() {
               .sort((a, b) => (a.points < b.points ? 1 : -1))
               .map((user, index) => (
                 <Link to={`/users/${user._id}`}>
-                  <div className="">
+                  <div key={index}>
                     <ul
                       role="list"
                       className="my-2 px-6 border-b-[1px] border-gray-200"
