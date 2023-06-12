@@ -7,13 +7,11 @@
   </h3>
  <br />
  
- ### Click here to download the video in better quality <a href="https://github.com/Cristina369/Gamification_App/blob/3e9d49c47cc822d8c09c43bb4fe9118bf031ab48/user/src/images/Gamification.mp4">Gamification app</a>
 
 </p>
 
 ## Demo
 
-https://user-images.githubusercontent.com/93976122/231408588-a1f561ec-cb89-4e3a-a677-9ffd8b4455ca.mp4
 
 
 ### Funtionalities
